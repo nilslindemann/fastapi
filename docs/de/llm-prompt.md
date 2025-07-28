@@ -21,7 +21,7 @@ For the next terms, use the following translations:
 * /// note: /// note | Hinweis
 * /// warning: /// warning | Achtung
 * /// danger: /// danger | Gefahr
-* /// info: /// info | Hinweis
+* /// info: /// info | Info
 * /// check: /// check | Überprüfen
 * "word": „Wort“ (Typographische Anführungszeichen)
 * etc.: usw.
@@ -120,6 +120,7 @@ For the next terms, use the following translations:
 * RAM memory: Arbeitsspeicher
 * disk: Festplatte
 * task: Aufgabe (in den informellen Erklärungen in `async.md`)
+* task: Task (Ansonsten)
 * background task: Hintergrundtask ("Hintergrund-Aufgabe")
 * task function: Taskfunktion
 * Data Science: Data Science
