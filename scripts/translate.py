@@ -65,7 +65,7 @@ app = typer.Typer()
 
 @lru_cache
 def get_langs() -> dict[str, str]:
-    return yaml.safe_load(Path("docs/language_names.yml").read_text())
+    return yaml.safe_load(Path("docs/language_names.yml").read_text(encoding='utf-8'))
 
 
 def generate_lang_path(*, lang: str, path: Path) -> Path:
@@ -96,7 +96,7 @@ def translate_page(*, lang: str, path: Path) -> None:
     lang_path.mkdir(exist_ok=True)
     lang_prompt_path = lang_path / "llm-prompt.md"
     assert lang_prompt_path.exists(), f"Prompt file not found: {lang_prompt_path}"
-    lang_prompt_content = lang_prompt_path.read_text()
+    lang_prompt_content = lang_prompt_path.read_text(encoding='utf-8')
 
     en_docs_path = Path("docs/en/docs")
     assert str(path).startswith(str(en_docs_path)), (
@@ -104,11 +104,11 @@ def translate_page(*, lang: str, path: Path) -> None:
     )
     out_path = generate_lang_path(lang=lang, path=path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    original_content = path.read_text()
+    original_content = path.read_text(encoding='utf-8')
     old_translation: str | None = None
     if out_path.exists():
         print(f"Found existing translation: {out_path}")
-        old_translation = out_path.read_text()
+        old_translation = out_path.read_text(encoding='utf-8')
     print(f"Translating {path} to {lang} ({language})")
     agent = Agent("openai:gpt-4o")
 
