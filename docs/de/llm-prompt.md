@@ -180,3 +180,18 @@ For the next terms, use the following translations:
 * to raise: auslösen
 * to return: zurückgeben
 * web framework: Webframework
+
+Allgemeines, gefunden in `de/docs/environment-variables.md`:
+
+* environment variable, Env Var: die Umgebungsvariable (im Deutschen wird der Begriff "Env Var" nicht verwendet)
+* to commit: comitten (Dieser Git-Term wird im Deutschen nicht übersetzt)
+* the `PATH`: der `PATH` (Genus ist männlich)
+
+Spezifische Reparaturen für `de/docs/environment-variables.md`:
+
+* Use Env vars with other programs, like: Verwenden Sie Umgebungsvariablen in anderen Programmen, etwa
+* committed to `git`: in `git` comitted
+* they are external to Python: sie existieren außerhalb von Python
+* This means that the system should look for programs in the directories: Das bedeutet, dass das System in diesen Verzeichnissen nach Programmen suchen sollte 
+* Installing Python and Updating the `PATH`: Python installieren und den `PATH` aktualisieren
+* So, if you type: (...) The system will **find** the `python` program in `/opt/custompython/bin` and run it: Wenn Sie also eingeben (...) wird das System das `python`-Programm in `/opt/custompython/bin` **finden** und es ausführen.
