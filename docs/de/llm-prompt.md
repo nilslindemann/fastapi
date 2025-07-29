@@ -195,3 +195,18 @@ Spezifische Reparaturen für `de/docs/environment-variables.md`:
 * This means that the system should look for programs in the directories: Das bedeutet, dass das System in diesen Verzeichnissen nach Programmen suchen sollte 
 * Installing Python and Updating the `PATH`: Python installieren und den `PATH` aktualisieren
 * So, if you type: (...) The system will **find** the `python` program in `/opt/custompython/bin` and run it: Wenn Sie also eingeben (...) wird das System das `python`-Programm in `/opt/custompython/bin` **finden** und es ausführen.
+
+
+Allgemeines, gefunden in `de/docs/fastapi-cli.md`:
+
+* development: Entwicklung
+* to serve: bereitstellen, ausliefern (hier der Webserver, der die Webseiten bereitstellt)
+* development mode: Entwicklermodus
+* termination proxy: Terminierungsproxy
+
+Spezifische Reparaturen für `de/docs/fastapi-cli.md`:
+
+* When you install FastAPI (...), it includes a package called `fastapi-cli`: Wenn Sie FastAPI installieren (...), beinhaltet das ein Package namens `fastapi-cli`
+* To run your FastAPI app for development: Um Ihre FastAPI-Anwendung während der Entwicklung auszuführen
+* FastAPI CLI serves your Python program: FastAPI CLI stellt Ihr Python-Programm bereit.
+* In most cases you would (and should) have a "termination proxy" handling HTTPS for you on top: In den meisten Fällen würden (und sollten) Sie einen „Terminierungsproxy“ haben, der zusätzlich HTTPS für Sie handhabt.
