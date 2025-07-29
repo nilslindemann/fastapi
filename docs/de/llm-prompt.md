@@ -189,7 +189,6 @@ Allgemeines, gefunden in `de/docs/environment-variables.md`:
 
 Spezifische Reparaturen für `de/docs/environment-variables.md`:
 
-* Use Env vars with other programs, like: Verwenden Sie Umgebungsvariablen in anderen Programmen, etwa
 * committed to `git`: in `git` comitted
 * they are external to Python: sie existieren außerhalb von Python
 * This means that the system should look for programs in the directories: Das bedeutet, dass das System in diesen Verzeichnissen nach Programmen suchen sollte 
