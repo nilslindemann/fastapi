@@ -30,6 +30,8 @@ The content is written in markdown, write the translation in markdown as well. D
 
 The original content will be surrounded by triple percentage signs (%) and you should translate it to the target language. Do not include the triple percentage signs in the translation.
 
+Preserve all indentation. For example, if a paragraph after a list item is indented by four whitespaces, indent the translated paragraph by four whitespaces too.
+
 There are special blocks of notes, tips and others that look like:
 
 /// note
