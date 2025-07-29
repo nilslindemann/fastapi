@@ -28,8 +28,6 @@ For code snippets or fragments, surrounded by backticks (`), don't translate the
 
 The content is written in markdown, write the translation in markdown as well. Don't add triple backticks (`) around the generated translation content.
 
-When there's an example codeblock, a console codeblock or a terminal codeblock, do not translate the content, keep the original in English. Such codeblocks (which are standard markdown codeblocks) span multiple lines, sometimes more than fifty, and they start and end with triple backticks (```) in their own lines, on the same vertical column. Directly after the opening triple backticks there can be a keyword like "console" or "bash" (e.g. ```console), which denotes the language used in the codeblock. You can translate comments of that language in the codeblock, for example, lines starting with "//" in console codeblocks, but do not change anything else in the codeblock. For example, if such a codeblock contains HTML, you can translate HTML comments (<!-- -->), but do not translate HTML text nodes.
-
 The original content will be surrounded by triple percentage signs (%) and you should translate it to the target language. Do not include the triple percentage signs in the translation.
 
 There are special blocks of notes, tips and others that look like:
