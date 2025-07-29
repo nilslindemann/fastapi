@@ -1,3 +1,4 @@
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Iterable
@@ -88,6 +89,79 @@ def generate_en_path(*, lang: str, path: Path) -> Path:
     return out_path
 
 
+def extract_codeblocks(text: str) -> tuple[str, dict[int, str]]:
+    lines = text.splitlines(keepends=True)
+    if not lines: raise Exception('text is empty')
+
+    line_ = lines[0]
+    line = line_.splitlines(keepends=False)[0]
+    len_line_end = len(line_)-len(line)
+    line_end = line_[-len_line_end:]
+    del line_, line, len_line_end
+
+    stripped: list[str] = []
+    blocks: dict[int, str] = {}
+    block = []
+    blockindent = ''
+    blockstartlinenum = 0
+    blockstartcolnum = 0
+    blockindex = 1
+    in_block = False
+    lookingfor = re.compile(r'^(\s*)(?:(`__CODEBLOCK_[0-9]+_PLACEHOLDER__`)|```)')
+    for linenum, line in enumerate(lines):
+        if found:=lookingfor.match(line):
+            indent = found.group(1)
+            existingplaceholder = found.group(2)
+            if existingplaceholder:
+                raise Exception(f'line {linenum}:{len(indent)}: Found "{existingplaceholder}", this confuses the translation script, as it inserts such markers itself')
+            if in_block:
+                if indent != blockindent:
+                    raise Exception(f'line {blockstartlinenum}:{blockstartcolnum}, line {linenum}:{len(indent)}: Opening triple backticks inconsistent aligned to closing triple backticks')
+                block.append(line)
+                blocks[blockindex] = ''.join(block)
+                block = []
+                stripped.append(f'{blockindent}`__CODEBLOCK_{blockindex}_PLACEHOLDER__`{line_end}')
+                blockindex += 1
+                in_block = False
+            else:
+                blockindent = indent
+                blockstartlinenum = linenum
+                blockstartcolnum = len(indent)
+                block.append(line)
+                in_block = True
+        else:
+            (block if in_block else stripped).append(line)
+
+    if in_block:
+        raise Exception(f'line {blockstartlinenum}:{blockstartcolnum}: This codeblock was never closed')
+
+    return ''.join(stripped), blocks
+
+
+def add_back_codeblocks(translation: str, blocks: dict[int, str]) -> str:
+    stripped = translation.splitlines(keepends=True)
+    if not stripped: raise Exception('Text is empty')
+
+    result: list[str] = []
+    blockindent = ''
+    lookingfor = re.compile(r'^(^\s*)`__CODEBLOCK_([1-9][0-9]*)_PLACEHOLDER__`')
+    for linenum, line in enumerate(stripped):
+        if found:=lookingfor.match(line):
+            blockindent = found.group(1)
+            blockindex = int(found.group(2))
+            if blockindex not in blocks:
+                raise Exception(f'line {linenum}:{len(blockindent)}: No codeblock with index {blockindex} available')
+            result.append(blocks[blockindex])
+            del blocks[blockindex]
+        else:
+            result.append(line)
+
+    if blocks:
+        raise Exception(f'Found no placeholders for block{'s' if len(blocks) > 1 else ''} {', '.join(str(k) for k in sorted(blocks.keys()))}')
+
+    return ''.join(result)
+
+
 @app.command()
 def translate_page(*, lang: str, path: Path) -> None:
     langs = get_langs()
@@ -105,10 +179,11 @@ def translate_page(*, lang: str, path: Path) -> None:
     out_path = generate_lang_path(lang=lang, path=path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     original_content = path.read_text(encoding='utf-8')
+    original_content_without_codeblocks, codeblocks = extract_codeblocks(original_content)
     old_translation: str | None = None
     if out_path.exists():
         print(f"Found existing translation: {out_path}")
-        old_translation = out_path.read_text(encoding='utf-8')
+        old_translation, _ = extract_codeblocks(out_path.read_text(encoding='utf-8'))
     print(f"Translating {path} to {lang} ({language})")
     agent = Agent("openai:gpt-4o")
 
@@ -130,15 +205,22 @@ def translate_page(*, lang: str, path: Path) -> None:
         [
             f"Translate to {language} ({lang}).",
             "Original content:",
-            f"%%%\n{original_content}%%%",
+            f"%%%\n{original_content_without_codeblocks}%%%",
         ]
     )
     prompt = "\n\n".join(prompt_segments)
     print(f"Running agent for {out_path}")
     result = agent.run_sync(prompt)
-    out_content = f"{result.data.strip()}\n"
-    print(f"Saving translation to {out_path}")
-    out_path.write_text(out_content)
+    try:
+        out_content = add_back_codeblocks(f"{result.data.strip()}\n", codeblocks)
+    except:
+        safety_path = out_path.parent / (out_path.stem + '__NO_CODEBLOCKS__' + out_path.suffix)
+        print(f"There was an error adding back the codeblocks. Saving the translation without codeblocks to {safety_path}")
+        safety_path.write_text(f"{result.data.strip()}\n", encoding='utf-8')
+        raise
+    else:
+        print(f"Saving translation to {out_path}")
+        out_path.write_text(out_content, encoding='utf-8')
 
 
 def iter_all_en_paths() -> Iterable[Path]:
