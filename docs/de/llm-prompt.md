@@ -193,7 +193,7 @@ Spezifische Reparaturen für `de/docs/environment-variables.md`:
 * they are external to Python: sie existieren außerhalb von Python
 * This means that the system should look for programs in the directories: Das bedeutet, dass das System in diesen Verzeichnissen nach Programmen suchen sollte 
 * Installing Python and Updating the `PATH`: Python installieren und den `PATH` aktualisieren
-* So, if you type: (...) The system will **find** the `python` program in `/opt/custompython/bin` and run it: Wenn Sie also eingeben (...) wird das System das `python`-Programm in `/opt/custompython/bin` **finden** und es ausführen.
+* So, if you type(...) The system will **find** the `python` program in `/opt/custompython/bin` and run it: Wenn Sie also eingeben(...) wird das System das `python`-Programm in `/opt/custompython/bin` **finden** und es ausführen.
 
 
 Allgemeines, gefunden in `de/docs/fastapi-cli.md`:
