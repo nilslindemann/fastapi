@@ -1,6 +1,6 @@
-# Virtuelle Umgebungen
+# <a id="virtual-environments"></a> Virtuelle Umgebungen
 
-Wenn Sie an Python-Projekten arbeiten, sollten Sie wahrscheinlich eine **virtuelle Umgebung** (oder einen ähnlichen Mechanismus) verwenden, um die Pakete(englisch: Packages), die Sie für jedes Projekt installieren, zu isolieren.
+Wenn Sie an Python-Projekten arbeiten, sollten Sie wahrscheinlich eine **virtuelle Umgebung** (oder einen ähnlichen Mechanismus) verwenden, um die Pakete (englisch: Packages), die Sie für jedes Projekt installieren, zu isolieren.
 
 /// info | Info
 
@@ -26,7 +26,7 @@ Wenn Sie bereit sind, ein **Tool zu verwenden, das alles für Sie verwaltet** (e
 
 ///
 
-## Ein Projekt erstellen
+## <a id="create-a-project"></a> Ein Projekt erstellen
 
 Erstellen Sie zuerst ein Verzeichnis für Ihr Projekt.
 
@@ -51,7 +51,7 @@ $ cd awesome-project
 
 </div>
 
-## Eine virtuelle Umgebung erstellen
+## <a id="create-a-virtual-environment"></a> Eine virtuelle Umgebung erstellen
 
 Wenn Sie zum **ersten Mal** an einem Python-Projekt arbeiten, erstellen Sie eine virtuelle Umgebung **<abbr title="Es gibt andere Optionen, dies ist eine einfache Richtlinie">innerhalb Ihres Projekts</abbr>**.
 
@@ -114,9 +114,9 @@ Sie könnten die virtuelle Umgebung in einem anderen Verzeichnis erstellen, aber
 
 ///
 
-## Die virtuelle Umgebung aktivieren
+## <a id="activate-the-virtual-environment"></a> Die virtuelle Umgebung aktivieren
 
-Aktivieren Sie die neue virtuelle Umgebung, damit jeder Python-Befehl, den Sie ausführen oder jedes Paket, das Sie installieren, diese Umgebung verwendet.
+Aktivieren Sie die neue virtuelle Umgebung, damit jeder Python-Befehl, den Sie ausführen, oder jedes Paket, das Sie installieren, diese Umgebung verwendet.
 
 /// tip | Tipp
 
@@ -170,7 +170,7 @@ So stellen Sie sicher, dass, wenn Sie ein **Terminalprogramm (<abbr title="Comma
 
 ///
 
-## Überprüfen, ob die virtuelle Umgebung aktiv ist
+## <a id="check-the-virtual-environment-is-active"></a> Überprüfen, ob die virtuelle Umgebung aktiv ist
 
 Überprüfen Sie, dass die virtuelle Umgebung aktiv ist (der vorherige Befehl funktioniert hat).
 
@@ -212,7 +212,7 @@ Wenn es das `python`-Binary in `.venv\Scripts\python` anzeigt, innerhalb Ihres P
 
 ////
 
-## `pip` aktualisieren
+## <a id="upgrade-pip"></a> `pip` aktualisieren
 
 /// tip | Tipp
 
@@ -242,7 +242,7 @@ $ python -m pip install --upgrade pip
 
 </div>
 
-## `.gitignore` hinzufügen
+## <a id="add-gitignore"></a> `.gitignore` hinzufügen
 
 Wenn Sie **Git** verwenden (was Sie sollten), fügen Sie eine `.gitignore`-Datei hinzu, um alles in Ihrem `.venv` von Git auszuschließen.
 
@@ -282,7 +282,7 @@ Dieser Befehl erstellt eine Datei `.gitignore` mit dem Inhalt:
 
 ///
 
-## Pakete installieren
+## <a id="install-packages"></a> Pakete installieren
 
 Nachdem Sie die Umgebung aktiviert haben, können Sie Pakete darin installieren.
 
@@ -294,7 +294,7 @@ Wenn Sie eine Version aktualisieren oder ein neues Paket hinzufügen müssen, w�
 
 ///
 
-### Pakete direkt installieren
+### <a id="install-packages-directly"></a> Pakete direkt installieren
 
 Wenn Sie es eilig haben und keine Datei verwenden möchten, um die Paketanforderungen Ihres Projekts zu deklarieren, können Sie sie direkt installieren.
 
@@ -333,7 +333,7 @@ $ uv pip install "fastapi[standard]"
 
 ////
 
-### Installation von `requirements.txt`
+### <a id="install-from-requirements-txt"></a> Installation von `requirements.txt`
 
 Wenn Sie eine `requirements.txt` haben, können Sie diese nun verwenden, um deren Pakete zu installieren.
 
@@ -376,7 +376,7 @@ pydantic==2.8.0
 
 ///
 
-## Ihr Programm ausführen
+## <a id="run-your-program"></a> Ihr Programm ausführen
 
 Nachdem Sie die virtuelle Umgebung aktiviert haben, können Sie Ihr Programm ausführen, und es wird das Python innerhalb Ihrer virtuellen Umgebung mit den Paketen verwenden, die Sie dort installiert haben.
 
@@ -390,7 +390,7 @@ Hello World
 
 </div>
 
-## Ihren Editor konfigurieren
+## <a id="configure-your-editor"></a> Ihren Editor konfigurieren
 
 Sie würden wahrscheinlich einen Editor verwenden, stellen Sie sicher, dass Sie ihn so konfigurieren, dass er die gleiche virtuelle Umgebung verwendet, die Sie erstellt haben (er wird sie wahrscheinlich automatisch erkennen), sodass Sie Autovervollständigungen und Inline-Fehler erhalten können.
 
@@ -405,7 +405,7 @@ Normalerweise müssen Sie dies nur **einmal** tun, wenn Sie die virtuelle Umgebu
 
 ///
 
-## Die virtuelle Umgebung deaktivieren
+## <a id="deactivate-the-virtual-environment"></a> Die virtuelle Umgebung deaktivieren
 
 Sobald Sie mit der Arbeit an Ihrem Projekt fertig sind, können Sie die virtuelle Umgebung **deaktivieren**.
 
@@ -419,7 +419,7 @@ $ deactivate
 
 Auf diese Weise, wenn Sie `python` ausführen, wird nicht versucht, es aus dieser virtuellen Umgebung mit den dort installierten Paketen auszuführen.
 
-## Bereit zu arbeit
+## <a id="ready-to-work"></a> Bereit zu arbeiten
 
 Jetzt sind Sie bereit, mit Ihrem Projekt zu arbeiten.
 
@@ -431,17 +431,17 @@ Lesen Sie weiter. 👇🤓
 
 ///
 
-## Warum virtuelle Umgebungen
+## <a id="why-virtual-environments"></a> Warum virtuelle Umgebungen
 
 Um mit FastAPI zu arbeiten, müssen Sie <a href="https://www.python.org/" class="external-link" target="_blank">Python</a> installieren.
 
 Danach müssen Sie FastAPI und alle anderen Pakete, die Sie verwenden möchten, **installieren**.
 
-Um Pakete zu installieren, würden Sie normalerweise den `pip` Befehl verwenden, der mit Python geliefert wird (oder ähnliche Alternativen).
+Um Pakete zu installieren, würden Sie normalerweise den `pip`-Befehl verwenden, der mit Python geliefert wird (oder ähnliche Alternativen).
 
 Wenn Sie jedoch `pip` direkt verwenden, werden die Pakete in Ihrer **globalen Python-Umgebung** (der globalen Installation von Python) installiert.
 
-### Das Problem
+### <a id="the-problem"></a> Das Problem
 
 Was ist also das Problem beim Installieren von Paketen in der globalen Python-Umgebung?
 
@@ -524,7 +524,7 @@ Stellen Sie sich das jetzt mit **vielen** anderen **Paketen** vor, von denen all
 
 Darüber hinaus könnte es je nach Ihrem Betriebssystem (z.B. Linux, Windows, macOS) bereits mit installiertem Python geliefert worden sein. Und in diesem Fall hatte es wahrscheinlich einige Pakete mit bestimmten Versionen **installiert**, die von Ihrem System benötigt werden. Wenn Sie Pakete in der globalen Python-Umgebung installieren, könnten Sie einige der Programme, die mit Ihrem Betriebssystem geliefert wurden, **kaputtmachen**.
 
-## Wo werden Pakete installiert
+## <a id="where-are-packages-installed"></a> Wo werden Pakete installiert
 
 Wenn Sie Python installieren, werden einige Verzeichnisse mit einigen Dateien auf Ihrem Rechner erstellt.
 
@@ -550,7 +550,7 @@ Dann wird es all diese Dateien **extrahieren** und sie in ein Verzeichnis auf Ih
 
 Standardmäßig werden diese heruntergeladenen und extrahierten Dateien in das Verzeichnis gelegt, das mit Ihrer Python-Installation kommt, das ist die **globale Umgebung**.
 
-## Was sind virtuelle Umgebungen
+## <a id="what-are-virtual-environments"></a> Was sind virtuelle Umgebungen
 
 Die Lösung für die Probleme, alle Pakete in der globalen Umgebung zu haben, besteht darin, eine **virtuelle Umgebung für jedes Projekt** zu verwenden, an dem Sie arbeiten.
 
@@ -575,7 +575,7 @@ flowchart TB
     stone-project ~~~ azkaban-project
 ```
 
-## Was bedeutet das Aktivieren einer virtuellen Umgebung
+## <a id="what-does-activating-a-virtual-environment-mean"></a> Was bedeutet das Aktivieren einer virtuellen Umgebung
 
 Wenn Sie eine virtuelle Umgebung aktivieren, zum Beispiel mit:
 
@@ -712,7 +712,7 @@ Ein wichtiger Punkt ist, dass es den Pfad der virtuellen Umgebung am **Anfang** 
 
 Das Aktivieren einer virtuellen Umgebung ändert auch ein paar andere Dinge, aber dies ist eines der wichtigsten Dinge, die es tut.
 
-## Überprüfen einer virtuellen Umgebung
+## <a id="checking-a-virtual-environment"></a> Überprüfen einer virtuellen Umgebung
 
 Wenn Sie überprüfen, ob eine virtuelle Umgebung aktiv ist, zum Beispiel mit:
 
@@ -764,7 +764,7 @@ Es ist nützlich, überprüfen zu können, welches `python` verwendet wird. 🤓
 
 ///
 
-## Warum eine virtuelle Umgebung deaktivieren
+## <a id="why-deactivate-a-virtual-environment"></a> Warum eine virtuelle Umgebung deaktivieren
 
 Zum Beispiel könnten Sie an einem Projekt `philosophers-stone` arbeiten, diese virtuelle Umgebung **aktivieren**, Pakete installieren und mit dieser Umgebung arbeiten.
 
@@ -818,7 +818,7 @@ I solemnly swear 🐺
 
 </div>
 
-## Alternativen
+## <a id="alternatives"></a> Alternativen
 
 Dies ist ein einfacher Leitfaden, um Ihnen den Einstieg zu erleichtern und Ihnen beizubringen, wie alles **unter der Haube** funktioniert.
 
@@ -835,7 +835,7 @@ Sobald Sie bereit sind und ein Tool verwenden möchten, das **das gesamte Projek
 * Sicherstellen, dass Sie eine **exakte** Menge an Paketen und Versionen zur Installation haben, einschließlich ihrer Abhängigkeiten, damit Sie sicher sein können, dass Sie Ihr Projekt in der Produktionsumgebung genauso ausführen können wie auf Ihrem Rechner während der Entwicklung, dies wird **Locking** genannt
 * Und viele andere Dinge
 
-## Fazit
+## <a id="conclusion"></a> Fazit
 
 Wenn Sie das alles gelesen und verstanden haben, wissen Sie jetzt **viel mehr** über virtuelle Umgebungen als viele Entwickler da draußen. 🤓
 

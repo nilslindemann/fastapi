@@ -1,4 +1,4 @@
-# Header-Parameter-Modelle
+# <a id="header-parameter-models"></a> Header-Parameter-Modelle
 
 Wenn Sie eine Gruppe verwandter **Header-Parameter** haben, können Sie ein **Pydantic-Modell** erstellen, um diese zu deklarieren.
 
@@ -10,7 +10,7 @@ Dies wird seit FastAPI Version `0.115.0` unterstützt. 🤓
 
 ///
 
-## Header-Parameter mit einem Pydantic-Modell
+## <a id="header-parameters-with-a-pydantic-model"></a> Header-Parameter mit einem Pydantic-Modell
 
 Deklarieren Sie die erforderlichen **Header-Parameter** in einem **Pydantic-Modell** und dann den Parameter als `Header`:
 
@@ -18,7 +18,7 @@ Deklarieren Sie die erforderlichen **Header-Parameter** in einem **Pydantic-Mode
 
 **FastAPI** wird die Daten für **jedes Feld** aus den **Headern** des Requests extrahieren und Ihnen das von Ihnen definierte Pydantic-Modell geben.
 
-## Die Dokumentation überprüfen
+## <a id="check-the-docs"></a> Die Dokumentation überprüfen
 
 Sie können die erforderlichen Header in der Dokumentationsoberfläche unter `/docs` sehen:
 
@@ -26,7 +26,7 @@ Sie können die erforderlichen Header in der Dokumentationsoberfläche unter `/d
 <img src="/img/tutorial/header-param-models/image01.png">
 </div>
 
-## Zusätzliche Header verbieten
+## <a id="forbid-extra-headers"></a> Zusätzliche Header verbieten
 
 In einigen speziellen Anwendungsfällen (wahrscheinlich nicht sehr häufig) möchten Sie möglicherweise die **Header einschränken**, die Sie erhalten möchten.
 
@@ -51,7 +51,7 @@ Zum Beispiel, wenn der Client versucht, einen `tool`-Header mit einem Wert von `
 }
 ```
 
-## Automatische Umwandlung von Unterstrichen deaktivieren
+## <a id="disable-convert-underscores"></a> Automatische Umwandlung von Unterstrichen deaktivieren
 
 Ähnlich wie bei regulären Header-Parametern werden bei der Verwendung von Unterstrichen in den Parameternamen diese **automatisch in Bindestriche umgewandelt**.
 
@@ -67,6 +67,6 @@ Bevor Sie `convert_underscores` auf `False` setzen, bedenken Sie, dass einige HT
 
 ///
 
-## Zusammenfassung
+## <a id="summary"></a> Zusammenfassung
 
 Sie können **Pydantic-Modelle** verwenden, um **Header** in **FastAPI** zu deklarieren. 😎

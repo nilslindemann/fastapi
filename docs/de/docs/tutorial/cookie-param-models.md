@@ -1,4 +1,4 @@
-# Cookie-Parameter-Modelle
+# <a id="cookie-parameter-models"></a> Cookie-Parameter-Modelle
 
 Wenn Sie eine Gruppe von **Cookies** haben, die zusammengehören, können Sie ein **Pydantic-Modell** erstellen, um diese zu deklarieren. 🍪
 
@@ -16,7 +16,7 @@ Diese gleiche Technik gilt für `Query`, `Cookie` und `Header`. 😎
 
 ///
 
-## Cookies mit einem Pydantic-Modell
+## <a id="cookies-with-a-pydantic-model"></a> Cookies mit einem Pydantic-Modell
 
 Deklarieren Sie die **Cookie**-Parameter, die Sie benötigen, in einem **Pydantic-Modell**, und deklarieren Sie dann den Parameter als `Cookie`:
 
@@ -24,7 +24,7 @@ Deklarieren Sie die **Cookie**-Parameter, die Sie benötigen, in einem **Pydanti
 
 **FastAPI** wird die Daten für **jedes Feld** aus den im Request empfangenen **Cookies** **extrahieren** und Ihnen das von Ihnen definierte Pydantic-Modell bereitstellen.
 
-## Die Dokumentation überprüfen
+## <a id="check-the-docs"></a> Die Dokumentation überprüfen
 
 Sie können die definierten Cookies in der Dokumentationsoberfläche unter `/docs` sehen:
 
@@ -42,7 +42,7 @@ Aber selbst wenn Sie die **Daten ausfüllen** und auf „Ausführen“ klicken, 
 
 ///
 
-## Zusätzliche Cookies verbieten
+## <a id="forbid-extra-cookies"></a> Zusätzliche Cookies verbieten
 
 In einigen speziellen Anwendungsfällen (wahrscheinlich nicht sehr häufig) möchten Sie möglicherweise die Cookies, die Sie empfangen möchten, **einschränken**.
 
@@ -71,6 +71,6 @@ Wenn der Client beispielsweise versucht, ein `santa_tracker`-Cookie mit einem We
 }
 ```
 
-## Zusammenfassung
+## <a id="summary"></a> Zusammenfassung
 
 Sie können **Pydantic-Modelle** verwenden, um <abbr title="Nehmen Sie einen letzten Keks, bevor Sie gehen. 🍪">**Cookies**</abbr> in **FastAPI** zu deklarieren. 😎

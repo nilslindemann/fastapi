@@ -1,14 +1,14 @@
-# Debugging
+# <a id="debugging"></a> Debugging
 
 Sie können den Debugger in Ihrem Editor verbinden, zum Beispiel mit Visual Studio Code oder PyCharm.
 
-## `uvicorn` aufrufen
+## <a id="call-uvicorn"></a> `uvicorn` aufrufen
 
 Importieren und führen Sie `uvicorn` direkt in Ihrer FastAPI-Anwendung aus:
 
 {* ../../docs_src/debugging/tutorial001.py hl[1,15] *}
 
-### Über `__name__ == "__main__"`
+### <a id="about-__name__-_-__main__"></a> Über `__name__ == "__main__"`
 
 Der Hauptzweck von `__name__ == "__main__"` ist, dass Code ausgeführt wird, wenn Ihre Datei mit folgendem Befehl aufgerufen wird:
 
@@ -26,7 +26,7 @@ aber nicht ausgeführt wird, wenn eine andere Datei sie importiert, wie in diese
 from myapp import app
 ```
 
-#### Weitere Details
+#### <a id="more-details"></a> Weitere Details
 
 Angenommen, Ihre Datei heißt `myapp.py`.
 
@@ -78,7 +78,7 @@ Für weitere Informationen besuchen Sie bitte <a href="https://docs.python.org/3
 
 ///
 
-## Ihren Code mit Ihrem Debugger ausführen
+## <a id="run-your-code-with-your-debugger"></a> Ihren Code mit Ihrem Debugger ausführen
 
 Da Sie den Uvicorn-Server direkt aus Ihrem Code ausführen, können Sie Ihr Python-Programm (Ihre FastAPI-Anwendung) direkt aus dem Debugger aufrufen.
 
