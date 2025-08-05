@@ -1,4 +1,4 @@
-# Eine Response direkt zurückgeben
+# <a id="return-a-response-directly"></a> Eine Response direkt zurückgeben
 
 Wenn Sie eine **FastAPI** *Pfadoperation* erstellen, können Sie normalerweise beliebige Daten davon zurückgeben: ein `dict`, eine `list`, ein Pydantic-Modell, ein Datenbankmodell, usw.
 
@@ -10,7 +10,7 @@ Sie können jedoch direkt eine `JSONResponse` von Ihren *Pfadoperationen* zurüc
 
 Das kann beispielsweise nützlich sein, um benutzerdefinierte Header oder Cookies zurückzugeben.
 
-## Eine `Response` zurückgeben
+## <a id="return-a-response"></a> Eine `Response` zurückgeben
 
 Tatsächlich können Sie jede `Response` oder jede Unterklasse davon zurückgeben.
 
@@ -26,7 +26,7 @@ Es wird keine Datenkonvertierung mit Pydantic-Modellen durchführen, es wird den
 
 Dadurch haben Sie viel Flexibilität. Sie können jeden Datentyp zurückgeben, jede Datendeklaration oder -validierung überschreiben, usw.
 
-## Verwendung des `jsonable_encoder` in einer `Response`
+## <a id="using-the-jsonable-encoder-in-a-response"></a> Verwendung des `jsonable_encoder` in einer `Response`
 
 Da **FastAPI** keine Änderungen an einer von Ihnen zurückgegebenen `Response` vornimmt, müssen Sie sicherstellen, dass deren Inhalt dafür bereit ist.
 
@@ -44,7 +44,7 @@ Sie könnten auch `from starlette.responses import JSONResponse` verwenden.
 
 ///
 
-## Eine benutzerdefinierte `Response` zurückgeben
+## <a id="returning-a-custom-response"></a> Eine benutzerdefinierte `Response` zurückgeben
 
 Das obige Beispiel zeigt alle Teile, die Sie benötigen, ist aber noch nicht sehr nützlich, da Sie das `item` einfach direkt hätten zurückgeben können, und **FastAPI** würde es für Sie in eine `JSONResponse` einfügen, es in ein `dict` konvertieren, usw. All das standardmäßig.
 
@@ -56,7 +56,7 @@ Sie könnten Ihren XML-Inhalt als String in eine `Response` einfügen und sie zu
 
 {* ../../docs_src/response_directly/tutorial002.py hl[1,18] *}
 
-## Anmerkungen
+## <a id="notes"></a> Anmerkungen
 
 Wenn Sie eine `Response` direkt zurücksenden, werden deren Daten weder validiert, konvertiert (serialisiert), noch automatisch dokumentiert.
 

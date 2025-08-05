@@ -37,7 +37,7 @@ FastAPI ist ein modernes, schnelles (hoch performantes) Webframework zur Erstell
 
 Seine Schlüssel-Merkmale sind:
 
-* **Schnell**: Sehr hohe Leistung, auf Augenhöhe mit **NodeJS** und **Go** (dank Starlette und Pydantic). [Eines der schnellsten verfügbaren Python-Frameworks](#performanz).
+* **Schnell**: Sehr hohe Leistung, auf Augenhöhe mit **NodeJS** und **Go** (dank Starlette und Pydantic). [Eines der schnellsten verfügbaren Python-Frameworks](#performance).
 * **Schnell zu programmieren**: Erhöhen Sie die Geschwindigkeit bei der Entwicklung von Funktionen um etwa 200 % bis 300 %. *
 * **Weniger Bugs**: Verringern Sie die von Menschen (Entwicklern) verursachten Fehler um etwa 40 %. *
 * **Intuitiv**: Exzellente Editor-Unterstützung. <abbr title="auch bekannt als Autovervollständigung, Autocompletion, IntelliSense">Code-Vervollständigung</abbr> überall. Weniger Debuggen.
@@ -372,7 +372,7 @@ item: Item
     * Dateien.
 * <abbr title="auch bekannt als: Serialisierung, Parsen, Marshalling">Konvertierung</abbr> von Ausgabedaten: Konvertierung von Python-Daten und -Typen zu Netzwerkdaten (als JSON):
     * Konvertieren von Python-Typen (`str`, `int`, `float`, `bool`, `list`, usw.).
-    * `Datetime`-Objekte.
+    * `datetime`-Objekte.
     * `UUID`-Objekte.
     * Datenbankmodelle.
     * ... und viele mehr.

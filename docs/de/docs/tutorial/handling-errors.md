@@ -1,4 +1,4 @@
-# Fehler behandeln
+# <a id="handling-errors"></a> Fehler behandeln
 
 Es gibt viele Situationen, in denen Sie einem Client, der Ihre API nutzt, einen Fehler mitteilen müssen.
 
@@ -19,15 +19,15 @@ Die Statuscodes im Bereich 400 bedeuten hingegen, dass es einen Fehler seitens d
 
 Erinnern Sie sich an all diese **"404 Not Found"** Fehler (und Witze)?
 
-## `HTTPException` verwenden
+## <a id="use-httpexception"></a> `HTTPException` verwenden
 
 Um HTTP-Responses mit Fehlern an den Client zurückzugeben, verwenden Sie `HTTPException`.
 
-### `HTTPException` importieren
+### <a id="import-httpexception"></a> `HTTPException` importieren
 
 {* ../../docs_src/handling_errors/tutorial001.py hl[1] *}
 
-### Eine `HTTPException` in Ihrem Code auslösen
+### <a id="raise-an-httpexception-in-your-code"></a> Eine `HTTPException` in Ihrem Code auslösen
 
 `HTTPException` ist eine normale Python-Exception mit zusätzlichen Daten, die für APIs relevant sind.
 
@@ -41,7 +41,7 @@ In diesem Beispiel lösen wir eine Exception mit einem Statuscode von `404` aus,
 
 {* ../../docs_src/handling_errors/tutorial001.py hl[11] *}
 
-### Die resultierende Response
+### <a id="the-resulting-response"></a> Die resultierende Response
 
 Wenn der Client `http://example.com/items/foo` anfordert (ein `item_id` `"foo"`), erhält dieser Client einen HTTP-Statuscode 200 und diese JSON-Response:
 
@@ -69,7 +69,7 @@ Diese werden von **FastAPI** automatisch gehandhabt und in JSON konvertiert.
 
 ///
 
-## Benutzerdefinierte Header hinzufügen
+## <a id="add-custom-headers"></a> Benutzerdefinierte Header hinzufügen
 
 Es gibt Situationen, in denen es nützlich ist, dem HTTP-Error benutzerdefinierte Header hinzuzufügen. Zum Beispiel für einige Arten der Sicherheit.
 
@@ -79,7 +79,7 @@ Aber falls Sie es für ein fortgeschrittenes Szenario benötigen, können Sie be
 
 {* ../../docs_src/handling_errors/tutorial002.py hl[14] *}
 
-## Benutzerdefinierte Exception-Handler installieren
+## <a id="install-custom-exception-handlers"></a> Benutzerdefinierte Exception-Handler installieren
 
 Sie können benutzerdefinierte Exception-Handler mit <a href="https://www.starlette.io/exceptions/" class="external-link" target="_blank">den gleichen Exception-Werkzeugen von Starlette</a> hinzufügen.
 
@@ -109,7 +109,7 @@ Sie könnten auch `from starlette.requests import Request` und `from starlette.r
 
 ///
 
-## Die Default-Exception-Handler überschreiben
+## <a id="override-the-default-exception-handlers"></a> Die Default-Exception-Handler überschreiben
 
 **FastAPI** hat einige Default-Exception-Handler.
 
@@ -117,7 +117,7 @@ Diese Handler sind dafür verantwortlich, die standardmäßigen JSON-Responses z
 
 Sie können diese Exception-Handler mit Ihren eigenen überschreiben.
 
-### Überschreiben von Request-Validierungs-Exceptions
+### <a id="override-request-validation-exceptions"></a> Überschreiben von Request-Validierungs-Exceptions
 
 Wenn ein Request ungültige Daten enthält, löst **FastAPI** intern einen `RequestValidationError` aus.
 
@@ -154,7 +154,7 @@ path -> item_id
   value is not a valid integer (type=type_error.integer)
 ```
 
-#### `RequestValidationError` vs. `ValidationError`
+#### <a id="requestvalidationerror-vs-validationerror"></a> `RequestValidationError` vs `ValidationError`
 
 /// warning | Achtung
 
@@ -172,7 +172,7 @@ Es sollte so sein, denn wenn Sie einen Pydantic `ValidationError` in Ihrer *Resp
 
 Und während Sie den Fehler beheben, sollten Ihre Clients/Benutzer keinen Zugriff auf interne Informationen über den Fehler haben, da das eine Sicherheitslücke aufdecken könnte.
 
-### Überschreiben des `HTTPException`-Fehlerhandlers
+### <a id="override-the-httpexception-error-handler"></a> Überschreiben des `HTTPException`-Fehlerhandlers
 
 Auf die gleiche Weise können Sie den `HTTPException`-Handler überschreiben.
 
@@ -188,7 +188,7 @@ Sie könnten auch `from starlette.responses import PlainTextResponse` verwenden.
 
 ///
 
-### Verwenden des `RequestValidationError`-Bodys
+### <a id="use-the-requestvalidationerror-body"></a> Verwenden des `RequestValidationError`-Bodys
 
 Der `RequestValidationError` enthält den empfangenen `body` mit den ungültigen Daten.
 
@@ -226,7 +226,7 @@ Sie erhalten eine Response, die Ihnen sagt, dass die Daten ungültig sind und di
 }
 ```
 
-#### FastAPIs `HTTPException` vs. Starlettes `HTTPException`
+#### <a id="fastapis-httpexception-vs-starlettes-httpexception"></a> FastAPIs `HTTPException` vs Starlettes `HTTPException`
 
 **FastAPI** hat seine eigene `HTTPException`.
 
@@ -246,7 +246,7 @@ Um in diesem Beispiel beide `HTTPException`s im selben Code zu haben, wird die E
 from starlette.exceptions import HTTPException as StarletteHTTPException
 ```
 
-### Die Exceptionhandler von **FastAPI** wiederverwenden
+### <a id="reuse-fastapis-exception-handlers"></a> Die Exceptionhandler von **FastAPI** wiederverwenden
 
 Wenn Sie die Exception zusammen mit den gleichen Default-Exceptionhandlern von **FastAPI** verwenden möchten, können Sie die Default-Exceptionhandler aus `fastapi.exception_handlers` importieren und wiederverwenden:
 

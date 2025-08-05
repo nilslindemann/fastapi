@@ -1,4 +1,4 @@
-# Response-Statuscode
+# <a id="response-status-code"></a> Response-Statuscode
 
 Genauso wie Sie ein Responsemodell angeben können, können Sie auch den HTTP-Statuscode für die Response mit dem Parameter `status_code` in jeder der *Pfadoperationen* deklarieren:
 
@@ -20,7 +20,7 @@ Dem `status_code`-Parameter wird eine Zahl mit dem HTTP-Statuscode übergeben.
 
 /// info | Info
 
-Alternativ kann `status_code` auch ein `IntEnum` erhalten, wie etwa Pythons <a href="https://docs.python.org/3/library/http.html#http.HTTPStatus" class="external-link" target="_blank">`http.HTTPStatus`</a>.
+`status_code` kann alternativ auch ein `IntEnum` erhalten, wie etwa Pythons <a href="https://docs.python.org/3/library/http.html#http.HTTPStatus" class="external-link" target="_blank">`http.HTTPStatus`</a>.
 
 ///
 
@@ -39,7 +39,7 @@ FastAPI erkennt dies und erstellt eine OpenAPI-Dokumentation, die zeigt, dass es
 
 ///
 
-## Über HTTP-Statuscodes
+## <a id="about-http-status-codes"></a> Über HTTP-Statuscodes
 
 /// note | Hinweis
 
@@ -70,7 +70,7 @@ Um mehr über die einzelnen Statuscodes zu erfahren und welcher wofür verwendet
 
 ///
 
-## Abkürzung zur Erinnerung an die Namen
+## <a id="shortcut-to-remember-the-names"></a> Abkürzung zur Erinnerung an die Namen
 
 Lassen Sie uns das vorherige Beispiel noch einmal anschauen:
 
@@ -96,6 +96,6 @@ Sie könnten auch `from starlette import status` verwenden.
 
 ///
 
-## Den Defaultwert ändern
+## <a id="changing-the-default"></a> Den Defaultwert ändern
 
 Später im [Handbuch für fortgeschrittene Benutzer](../advanced/response-change-status-code.md){.internal-link target=_blank} werden Sie sehen, wie Sie einen anderen Statuscode zurückgeben können, als den Default, den Sie hier deklarieren.

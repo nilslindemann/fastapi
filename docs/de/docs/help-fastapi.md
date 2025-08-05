@@ -1,4 +1,4 @@
-# FastAPI helfen – Hilfe erhalten
+# <a id="help-fastapi-get-help"></a> FastAPI helfen – Hilfe erhalten
 
 Mögen Sie **FastAPI**?
 
@@ -10,7 +10,7 @@ Es gibt sehr einfache Möglichkeiten zu helfen (einige erfordern nur ein oder zw
 
 Und es gibt auch mehrere Möglichkeiten, Hilfe zu bekommen.
 
-## Newsletter abonnieren
+## <a id="subscribe-to-the-newsletter"></a> Newsletter abonnieren
 
 Sie können den (unregelmäßigen) [**FastAPI and friends**-Newsletter](newsletter.md){.internal-link target=_blank} abonnieren, um über folgende Themen informiert zu bleiben:
 
@@ -20,17 +20,17 @@ Sie können den (unregelmäßigen) [**FastAPI and friends**-Newsletter](newslett
 * Breaking Changes 🚨
 * Tipps und Tricks ✅
 
-## FastAPI auf Twitter folgen
+## <a id="follow-fastapi-on-twitter"></a> FastAPI auf Twitter folgen
 
 <a href="https://twitter.com/fastapi" class="external-link" target="_blank">Folgen Sie @fastapi auf **Twitter**</a>, um die neuesten Nachrichten über **FastAPI** zu erhalten. 🐦
 
-## **FastAPI** auf GitHub einen Stern geben
+## <a id="star-fastapi-in-github"></a> **FastAPI** auf GitHub einen Stern geben
 
 Sie können FastAPI auf GitHub „starren“ (klicken Sie auf den Stern-Button oben rechts): <a href="https://github.com/fastapi/fastapi" class="external-link" target="_blank">https://github.com/fastapi/fastapi</a>. ⭐️
 
 Durch das Hinzufügen eines Sterns können andere Benutzer es leichter finden und sehen, dass es für andere bereits nützlich war.
 
-## Das GitHub-Repository auf Releases überwachen
+## <a id="watch-the-github-repository-for-releases"></a> Das GitHub-Repository auf Releases überwachen
 
 Sie können FastAPI auf GitHub „beobachten“ (klicken Sie auf den „watch“-Button oben rechts): <a href="https://github.com/fastapi/fastapi" class="external-link" target="_blank">https://github.com/fastapi/fastapi</a>. 👀
 
@@ -38,7 +38,7 @@ Dort können Sie „Releases only“ auswählen.
 
 Auf diese Weise erhalten Sie Benachrichtigungen (per E-Mail), wenn es ein neues Release (eine neue Version) von **FastAPI** mit Bugfixes und neuen Funktionen gibt.
 
-## Mit dem Autor vernetzen
+## <a id="connect-with-the-author"></a> Mit dem Autor vernetzen
 
 Sie können sich mit <a href="https://tiangolo.com" class="external-link" target="_blank">mir (Sebastián Ramírez / `tiangolo`)</a>, dem Autor, verbinden.
 
@@ -57,19 +57,19 @@ Sie können:
     * Andere Ideen, Artikel lesen und mehr über die von mir erstellten Tools erfahren.
     * Mir folgen, um zu lesen, wenn ich etwas Neues veröffentliche.
 
-## Über **FastAPI** tweeten
+## <a id="tweet-about-fastapi"></a> Über **FastAPI** tweeten
 
 <a href="https://twitter.com/compose/tweet?text=Ich liebe @fastapi, weil ... https://github.com/fastapi/fastapi" class="external-link" target="_blank">Tweeten Sie über **FastAPI**</a> und teilen Sie mir und anderen mit, warum es Ihnen gefällt. 🎉
 
 Ich höre gerne, wie **FastAPI** verwendet wird, was Ihnen daran gefallen hat, in welchem Projekt/Unternehmen Sie es verwenden, usw.
 
-## Für FastAPI abstimmen
+## <a id="vote-for-fastapi"></a> Für FastAPI abstimmen
 
 * <a href="https://www.slant.co/options/34241/~fastapi-review" class="external-link" target="_blank">Stimmen Sie für **FastAPI** auf Slant</a>.
 * <a href="https://alternativeto.net/software/fastapi/about/" class="external-link" target="_blank">Stimmen Sie für **FastAPI** auf AlternativeTo</a>.
 * <a href="https://stackshare.io/pypi-fastapi" class="external-link" target="_blank">Sagen Sie auf StackShare, dass Sie **FastAPI** verwenden</a>.
 
-## Anderen bei Fragen auf GitHub helfen
+## <a id="help-others-with-questions-in-github"></a> Anderen bei Fragen auf GitHub helfen
 
 Sie können versuchen, anderen bei ihren Fragen zu helfen:
 
@@ -88,7 +88,7 @@ Die **FastAPI**-Community soll freundlich und einladend sein. Akzeptieren Sie gl
 
 So helfen Sie anderen bei Fragen (in Diskussionen oder Issues):
 
-### Die Frage verstehen
+### <a id="understand-the-question"></a> Die Frage verstehen
 
 * Prüfen Sie, ob Sie verstehen können, was der **Zweck** und der Anwendungsfall der fragenden Person ist.
 
@@ -98,7 +98,7 @@ So helfen Sie anderen bei Fragen (in Diskussionen oder Issues):
 
 * Wenn Sie die Frage nicht verstehen können, fragen Sie nach weiteren **Details**.
 
-### Das Problem reproduzieren
+### <a id="reproduce-the-problem"></a> Das Problem reproduzieren
 
 In den meisten Fällen und bei den meisten Fragen gibt es etwas in Bezug auf den **Originalcode** der Person.
 
@@ -108,13 +108,13 @@ In vielen Fällen wird nur ein Fragment des Codes gepostet, aber das reicht nich
 
 * Wenn Sie in Geberlaune sind, können Sie ein solches Beispiel selbst erstellen, nur basierend auf der Beschreibung des Problems. Denken Sie jedoch daran, dass dies viel Zeit in Anspruch nehmen kann und dass es besser sein kann, zunächst um eine Klärung des Problems zu bitten.
 
-### Lösungen vorschlagen
+### <a id="suggest-solutions"></a> Lösungen vorschlagen
 
 * Nachdem Sie die Frage verstanden haben, können Sie eine mögliche **Antwort** geben.
 
 * In vielen Fällen ist es besser, das **zugrunde liegende Problem oder den Anwendungsfall** zu verstehen, da es möglicherweise einen besseren Weg zur Lösung gibt als das, was die Person versucht.
 
-### Um Schließung bitten
+### <a id="ask-to-close"></a> Um Schließung bitten
 
 Wenn sie antworten, besteht eine hohe Chance, dass Sie ihr Problem gelöst haben. Herzlichen Glückwunsch, **Sie sind ein Held**! 🦸
 
@@ -123,7 +123,7 @@ Wenn sie antworten, besteht eine hohe Chance, dass Sie ihr Problem gelöst haben
     * In GitHub-Diskussionen: den Kommentar als **Antwort** zu markieren.
     * In GitHub-Issues: Das Issue zu **schließen**.
 
-## Das GitHub-Repository beobachten
+## <a id="watch-the-github-repository"></a> Das GitHub-Repository beobachten
 
 Sie können FastAPI auf GitHub „beobachten“ (klicken Sie auf den „watch“-Button oben rechts): <a href="https://github.com/fastapi/fastapi" class="external-link" target="_blank">https://github.com/fastapi/fastapi</a>. 👀
 
@@ -131,7 +131,7 @@ Wenn Sie dann „Watching“ statt „Releases only“ auswählen, erhalten Sie 
 
 Dann können Sie versuchen, bei der Lösung solcher Fragen zu helfen.
 
-## Fragen stellen
+## <a id="ask-questions"></a> Fragen stellen
 
 Sie können im GitHub-Repository <a href="https://github.com/fastapi/fastapi/discussions/new?category=questions" class="external-link" target="_blank">eine neue Frage erstellen</a>, zum Beispiel:
 
@@ -140,7 +140,7 @@ Sie können im GitHub-Repository <a href="https://github.com/fastapi/fastapi/dis
 
 **Hinweis**: Wenn Sie das tun, bitte ich Sie, auch anderen zu helfen. 😉
 
-## Pull Requests prüfen
+## <a id="review-pull-requests"></a> Pull Requests prüfen
 
 Sie können mir helfen, Pull Requests von anderen zu überprüfen.
 
@@ -150,21 +150,21 @@ Noch einmal, bitte versuchen Sie Ihr Bestes, freundlich zu sein. 🤗
 
 Hier ist, was Sie beachten sollten und wie Sie einen Pull Request überprüfen:
 
-### Das Problem verstehen
+### <a id="understand-the-problem"></a> Das Problem verstehen
 
 * Stellen Sie zunächst sicher, dass Sie **das Problem verstehen**, welches der Pull Request zu lösen versucht. Möglicherweise gibt es eine längere Diskussion dazu in einer GitHub-Diskussion oder einem GitHub-Issue.
 
 * Es besteht auch eine gute Chance, dass der Pull Request nicht wirklich benötigt wird, da das Problem auf **andere Weise** gelöst werden kann. Dann können Sie das vorschlagen oder danach fragen.
 
-### Keine Panik wegen des Stils
+### <a id="dont-worry-about-style"></a> Keine Panik wegen des Stils
 
 * Machen Sie sich keine Sorgen über Dinge wie den Stil von Commit-Nachrichten. Ich werde den Commit zusammenführen und manuell anpassen.
 
 * Außerdem, keine Sorgen über Stilregeln, es gibt bereits automatisierte Tools, die das überprüfen.
 
-Und wenn es irgendeinen andereren Stil- oder Konsistenzbedarf gibt, werde ich direkt danach fragen oder zusätzliche Commits mit den erforderlichen Änderungen hinzufügen.
+Und wenn es irgendeinen anderen Stil- oder Konsistenzbedarf gibt, werde ich direkt danach fragen oder zusätzliche Commits mit den erforderlichen Änderungen hinzufügen.
 
-### Den Code überprüfen
+### <a id="check-the-code"></a> Den Code überprüfen
 
 * Prüfen und lesen Sie den Code, fragen Sie sich, ob er Sinn macht, **führen Sie ihn lokal aus** und testen Sie, ob er das Problem tatsächlich löst.
 
@@ -182,7 +182,7 @@ Daher ist es wirklich wichtig, dass Sie den Code wirklich lesen und ausführen u
 
 * Wenn der PR in irgendeiner Weise vereinfacht werden kann, können Sie danach fragen, aber es gibt keinen Grund, zu wählerisch zu sein. Es gibt viele subjektive Standpunkte (und ich habe auch meinen eigenen 🙈), also ist es besser, wenn man sich auf die grundlegenden Dinge konzentriert.
 
-### Tests
+### <a id="tests"></a> Tests
 
 * Helfen Sie mir zu überprüfen, dass der PR **Tests** hat.
 
@@ -194,7 +194,7 @@ Daher ist es wirklich wichtig, dass Sie den Code wirklich lesen und ausführen u
 
 * Kommentieren Sie auch hier anschließend, was Sie versucht haben, sodass ich weiß, dass Sie es überprüft haben. 🤓
 
-## Einen Pull Request erstellen
+## <a id="create-a-pull-request"></a> Einen Pull Request erstellen
 
 Sie können [zum Quellcode mit Pull Requests beitragen](contributing.md){.internal-link target=_blank}, zum Beispiel:
 
@@ -210,7 +210,7 @@ Sie können [zum Quellcode mit Pull Requests beitragen](contributing.md){.intern
     * Stellen Sie sicher, dass Sie Tests hinzufügen.
     * Stellen Sie sicher, dass Sie Dokumentation hinzufügen, falls das notwendig ist.
 
-## FastAPI pflegen
+## <a id="help-maintain-fastapi"></a> FastAPI pflegen
 
 Helfen Sie mir, **FastAPI** zu pflegen! 🤓
 
@@ -218,14 +218,14 @@ Es gibt viel zu tun, und das meiste davon können **SIE** tun.
 
 Die Hauptaufgaben, die Sie jetzt erledigen können, sind:
 
-* [Anderen bei Fragen auf GitHub helfen](#andere-bei-fragen-auf-github-helfen){.internal-link target=_blank} (siehe Abschnitt oben).
-* [Pull Requests prüfen](#pull-requests-prufen){.internal-link target=_blank} (siehe Abschnitt oben).
+* [Anderen bei Fragen auf GitHub helfen](#help-others-with-questions-in-github){.internal-link target=_blank} (siehe Abschnitt oben).
+* [Pull Requests prüfen](#review-pull-requests){.internal-link target=_blank} (siehe Abschnitt oben).
 
 Diese beiden Aufgaben sind die Dinge, die **am meisten Zeit verbrauchen**. Das ist die Hauptarbeit bei der Wartung von FastAPI.
 
 Wenn Sie mir dabei helfen können, **helfen Sie mir, FastAPI zu pflegen** und stellen sicher, dass es weiterhin **schneller und besser voranschreitet**. 🚀
 
-## Am Chat teilnehmen
+## <a id="join-the-chat"></a> Am Chat teilnehmen
 
 Treten Sie dem 👥 <a href="https://discord.gg/VQjSZaeJmf" class="external-link" target="_blank">Discord-Chat-Server</a> 👥 bei und treffen Sie sich mit anderen Mitgliedern der FastAPI-Community.
 
@@ -237,7 +237,7 @@ Nutzen Sie den Chat nur für andere allgemeine Gespräche.
 
 ///
 
-### Den Chat nicht für Fragen verwenden
+### <a id="dont-use-the-chat-for-questions"></a> Den Chat nicht für Fragen verwenden
 
 Bedenken Sie, dass Sie in Chats, die „freie Konversation“ erlauben, leicht Fragen stellen können, die zu allgemein und schwer zu beantworten sind, sodass Sie möglicherweise keine Antworten erhalten.
 
@@ -247,7 +247,7 @@ Unterhaltungen in den Chat-Systemen sind auch nicht so leicht durchsuchbar wie a
 
 Auf der anderen Seite gibt es Tausende von Benutzern in den Chat-Systemen, sodass die Wahrscheinlichkeit hoch ist, dass Sie dort fast immer jemanden zum Reden finden. 😄
 
-## Den Autor sponsern
+## <a id="sponsor-the-author"></a> Den Autor sponsern
 
 Wenn Ihr **Produkt/Firma** auf **FastAPI** angewiesen ist oder in Zusammenhang steht und Sie seine Benutzer erreichen möchten, können Sie den Autor (mich) über <a href="https://github.com/sponsors/tiangolo" class="external-link" target="_blank">GitHub-Sponsoren</a> unterstützen. Je nach Stufe können Sie einige zusätzliche Vorteile erhalten, wie z.B. ein Abzeichen in den Docs. 🎁
 

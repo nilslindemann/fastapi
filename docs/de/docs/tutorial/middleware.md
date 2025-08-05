@@ -1,4 +1,4 @@
-# Middleware
+# <a id="middleware"></a> Middleware
 
 Sie können Middleware zu **FastAPI**-Anwendungen hinzufügen.
 
@@ -19,7 +19,7 @@ Wenn es Hintergrundtasks gab (dies wird später im [Hintergrundtasks](background
 
 ///
 
-## Eine Middleware erstellen
+## <a id="create-a-middleware"></a> Eine Middleware erstellen
 
 Um eine Middleware zu erstellen, verwenden Sie den Dekorator `@app.middleware("http")` über einer Funktion.
 
@@ -49,7 +49,7 @@ Sie könnten auch `from starlette.requests import Request` verwenden.
 
 ///
 
-### Vor und nach der `response`
+### <a id="before-and-after-the-response"></a> Vor und nach der `response`
 
 Sie können Code hinzufügen, der mit dem `request` ausgeführt wird, bevor dieser von einer beliebigen *Pfadoperation* empfangen wird.
 
@@ -65,7 +65,7 @@ Hier verwenden wir <a href="https://docs.python.org/3/library/time.html#time.per
 
 ///
 
-## Ausführungsreihenfolge bei mehreren Middlewares
+## <a id="multiple-middleware-execution-order"></a> Ausführungsreihenfolge bei mehreren Middlewares
 
 Wenn Sie mehrere Middlewares hinzufügen, entweder mit dem `@app.middleware()` Dekorator oder der Methode `app.add_middleware()`, umschließt jede neue Middleware die Anwendung und bildet einen Stapel. Die zuletzt hinzugefügte Middleware ist die *äußerste*, und die erste ist die *innerste*.
 
@@ -88,7 +88,7 @@ Dies führt zu folgender Ausführungsreihenfolge:
 
 Dieses Stapelverhalten stellt sicher, dass Middlewares in einer vorhersehbaren und kontrollierbaren Reihenfolge ausgeführt werden.
 
-## Andere Middlewares
+## <a id="other-middlewares"></a> Andere Middlewares
 
 Sie können später mehr über andere Middlewares im [Handbuch für fortgeschrittene Benutzer: Fortgeschrittene Middleware](../advanced/middleware.md){.internal-link target=_blank} lesen.
 

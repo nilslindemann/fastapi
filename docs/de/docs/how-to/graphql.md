@@ -1,4 +1,4 @@
-# GraphQL
+# <a id="graphql"></a> GraphQL
 
 Da **FastAPI** auf dem **ASGI**-Standard basiert, ist es sehr einfach, jede **GraphQL**-Bibliothek zu integrieren, die auch mit ASGI kompatibel ist.
 
@@ -14,7 +14,7 @@ Stellen Sie sicher, dass Sie prüfen, ob die **Vorteile** für Ihren Anwendungsf
 
 ///
 
-## GraphQL-Bibliotheken
+## <a id="graphql-libraries"></a> GraphQL-Bibliotheken
 
 Hier sind einige der **GraphQL**-Bibliotheken, die **ASGI**-Unterstützung haben. Sie könnten sie mit **FastAPI** verwenden:
 
@@ -27,9 +27,9 @@ Hier sind einige der **GraphQL**-Bibliotheken, die **ASGI**-Unterstützung haben
 * <a href="https://graphene-python.org/" class="external-link" target="_blank">Graphene</a>
     * Mit <a href="https://github.com/ciscorn/starlette-graphene3" class="external-link" target="_blank">starlette-graphene3</a>
 
-## GraphQL mit Strawberry
+## <a id="graphql-with-strawberry"></a> GraphQL mit Strawberry
 
-Wenn Sie mit **GraphQL** arbeiten möchten oder müssen, ist <a href="https://strawberry.rocks/" class="external-link" target="_blank">**Strawberry**</a> die **empfohlene** Bibliothek, da deren Design dem Design von **FastAPI** am nächsten kommt und alles auf **Typannotationen** basiert.
+Wenn Sie mit **GraphQL** arbeiten möchten oder müssen, ist <a href="https://strawberry.rocks/" class="external-link" target="_blank">**Strawberry**</a> die **empfohlene** Bibliothek, da deren Design dem Design von **FastAPI** am nächsten kommt und alles auf **Typ-Annotationen** basiert.
 
 Abhängig von Ihrem Anwendungsfall könnten Sie eine andere Bibliothek vorziehen, aber wenn Sie mich fragen würden, würde ich Ihnen wahrscheinlich empfehlen, **Strawberry** auszuprobieren.
 
@@ -41,7 +41,7 @@ Weitere Informationen zu Strawberry finden Sie in der <a href="https://strawberr
 
 Und auch in der Dokumentation zu <a href="https://strawberry.rocks/docs/integrations/fastapi" class="external-link" target="_blank">Strawberry mit FastAPI</a>.
 
-## Ältere `GraphQLApp` von Starlette
+## <a id="older-graphqlapp-from-starlette"></a> Ältere `GraphQLApp` von Starlette
 
 Frühere Versionen von Starlette enthielten eine `GraphQLApp`-Klasse zur Integration mit <a href="https://graphene-python.org/" class="external-link" target="_blank">Graphene</a>.
 
@@ -49,11 +49,11 @@ Das wurde von Starlette deprecated, aber wenn Sie Code haben, der das verwendet,
 
 /// tip | Tipp
 
-Wenn Sie GraphQL benötigen, würde ich Ihnen trotzdem empfehlen, sich <a href="https://strawberry.rocks/" class="external-link" target="_blank">Strawberry</a> anzuschauen, da es auf Typannotationen basiert, statt auf benutzerdefinierten Klassen und Typen.
+Wenn Sie GraphQL benötigen, würde ich Ihnen trotzdem empfehlen, sich <a href="https://strawberry.rocks/" class="external-link" target="_blank">Strawberry</a> anzuschauen, da es auf Typ-Annotationen basiert, statt auf benutzerdefinierten Klassen und Typen.
 
 ///
 
-## Mehr darüber lernen
+## <a id="learn-more"></a> Mehr darüber lernen
 
 Weitere Informationen zu **GraphQL** finden Sie in der <a href="https://graphql.org/" class="external-link" target="_blank">offiziellen GraphQL-Dokumentation</a>.
 

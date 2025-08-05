@@ -1,4 +1,4 @@
-# Extramodelle
+# <a id="extra-models"></a> Extramodelle
 
 Im Anschluss an das vorherige Beispiel ist es üblich, mehr als ein zusammenhängendes Modell zu haben.
 
@@ -16,7 +16,7 @@ Wenn Sie nicht wissen, was das ist, werden Sie in den [Sicherheitskapiteln](secu
 
 ///
 
-## Mehrere Modelle
+## <a id="multiple-models"></a> Mehrere Modelle
 
 Hier ist eine allgemeine Idee, wie die Modelle mit ihren Passwortfeldern aussehen könnten und an welchen Stellen sie verwendet werden:
 
@@ -30,9 +30,9 @@ Die Beispiele hier verwenden `.dict()` für die Kompatibilität mit Pydantic v1,
 
 ///
 
-### Über `**user_in.dict()`
+### <a id="about-user-in-dict"></a> Über `**user_in.dict()`
 
-#### Die `.dict()` Methode von Pydantic
+#### <a id="pydantics-dict"></a> Die `.dict()` Methode von Pydantic
 
 `user_in` ist ein Pydantic-Modell der Klasse `UserIn`.
 
@@ -69,7 +69,7 @@ würden wir ein Python-`dict` erhalten mit:
 }
 ```
 
-#### Ein `dict` entpacken
+#### <a id="unpacking-a-dict"></a> Ein `dict` entpacken
 
 Wenn wir ein `dict` wie `user_dict` nehmen und es einer Funktion (oder Klasse) mit `**user_dict` übergeben, wird Python es „entpacken“. Es wird die Schlüssel und Werte von `user_dict` direkt als Schlüsselwort-Argumente übergeben.
 
@@ -101,7 +101,7 @@ UserInDB(
 )
 ```
 
-#### Ein Pydantic-Modell aus dem Inhalt eines anderen
+#### <a id="a-pydantic-model-from-the-contents-of-another"></a> Ein Pydantic-Modell aus dem Inhalt eines anderen
 
 Da wir im obigen Beispiel `user_dict` von `user_in.dict()` bekommen haben, wäre dieser Code:
 
@@ -120,7 +120,7 @@ UserInDB(**user_in.dict())
 
 Auf diese Weise erhalten wir ein Pydantic-Modell aus den Daten eines anderen Pydantic-Modells.
 
-#### Ein `dict` entpacken und zusätzliche Schlüsselwort-Argumente
+#### <a id="unpacking-a-dict-and-extra-keywords"></a> Ein `dict` entpacken und zusätzliche Schlüsselwort-Argumente
 
 Und dann fügen wir das zusätzliche Schlüsselwort-Argument `hashed_password=hashed_password` hinzu, wie in:
 
@@ -146,7 +146,7 @@ Die unterstützenden zusätzlichen Funktionen `fake_password_hasher` und `fake_s
 
 ///
 
-## Verdopplung vermeiden
+## <a id="reduce-duplication"></a> Verdopplung vermeiden
 
 Die Reduzierung von Code-Verdoppelung ist eine der Kernideen von **FastAPI**.
 
@@ -164,7 +164,7 @@ Auf diese Weise können wir nur die Unterschiede zwischen den Modellen (mit Klar
 
 {* ../../docs_src/extra_models/tutorial002_py310.py hl[7,13:14,17:18,21:22] *}
 
-## `Union` oder `anyOf`
+## <a id="union-or-anyof"></a> `Union` oder `anyOf`
 
 Sie können deklarieren, dass eine Response eine <abbr title="Union – Verbund, Einheit, Vereinigung: Eines von Mehreren">`Union`</abbr> mehrerer Typen ist, das bedeutet, dass die Response einer von ihnen ist.
 
@@ -180,7 +180,7 @@ Wenn Sie eine <a href="https://docs.pydantic.dev/latest/concepts/types/#unions" 
 
 {* ../../docs_src/extra_models/tutorial003_py310.py hl[1,14:15,18:20,33] *}
 
-### `Union` in Python 3.10
+### <a id="union-in-python-310"></a> `Union` in Python 3.10
 
 In diesem Beispiel übergeben wir `Union[PlaneItem, CarItem]` als Wert des Arguments `response_model`.
 
@@ -194,7 +194,7 @@ some_variable: PlaneItem | CarItem
 
 Aber wenn wir das in der Zuweisung `response_model=PlaneItem | CarItem` machen, würden wir einen Fehler erhalten, weil Python versuchen würde, eine **ungültige Operation** zwischen `PlaneItem` und `CarItem` auszuführen, anstatt es als Typannotation zu interpretieren.
 
-## Liste von Modellen
+## <a id="list-of-models"></a> Liste von Modellen
 
 Auf die gleiche Weise können Sie Responses von Listen von Objekten deklarieren.
 
@@ -202,7 +202,7 @@ Dafür verwenden Sie das Standard-Python `typing.List` (oder nur `list` in Pytho
 
 {* ../../docs_src/extra_models/tutorial004_py39.py hl[18] *}
 
-## Response mit beliebigem `dict`
+## <a id="response-with-arbitrary-dict"></a> Response mit beliebigem `dict`
 
 Sie können auch eine Response deklarieren, die ein beliebiges `dict` zurückgibt, indem Sie nur die Typen der Schlüssel und Werte ohne ein Pydantic-Modell deklarieren.
 
@@ -212,7 +212,7 @@ In diesem Fall können Sie `typing.Dict` verwenden (oder nur `dict` in Python 3.
 
 {* ../../docs_src/extra_models/tutorial005_py39.py hl[6] *}
 
-## Zusammenfassung
+## <a id="recap"></a> Zusammenfassung
 
 Verwenden Sie gerne mehrere Pydantic-Modelle und vererben Sie je nach Bedarf.
 

@@ -1,6 +1,6 @@
-# Einen Server manuell ausführen
+# <a id="run-a-server-manually"></a> Einen Server manuell ausführen
 
-## Den `fastapi run` Befehl verwenden
+## <a id="use-the-fastapi-run-command"></a> Den `fastapi run` Befehl verwenden
 
 Kurz gesagt, nutzen Sie `fastapi run`, um Ihre FastAPI-Anwendung bereitzustellen:
 
@@ -40,15 +40,15 @@ $ <font color="#4E9A06">fastapi</font> run <u style="text-decoration-style:solid
 
 Das würde in den meisten Fällen funktionieren. 😎
 
-Sie könnten diesen Befehl beispielsweise verwenden, um Ihre **FastAPI**-App in einem Container, auf einem Server usw. zu starten.
+Sie könnten diesen Befehl beispielsweise nutzen, um Ihre **FastAPI**-App in einem Container, auf einem Server usw. zu starten.
 
-## ASGI-Server
+## <a id="asgi-servers"></a> ASGI-Server
 
 Lassen Sie uns ein wenig tiefer in die Details eintauchen.
 
 FastAPI verwendet einen Standard zum Erstellen von Python-Webframeworks und -Servern, der als <abbr title="Asynchronous Server Gateway Interface – Asynchrone Server-Gateway-Schnittstelle">ASGI</abbr> bekannt ist. FastAPI ist ein ASGI-Webframework.
 
-Das Wichtigste, was Sie benötigen, um eine **FastAPI**-Anwendung (oder eine andere ASGI-Anwendung) auf einer entfernten Servermaschine auszuführen, ist ein ASGI-Serverprogramm wie **Uvicorn**, der standardmäßig im `fastapi`-Kommando enthalten ist.
+Das Wichtigste, was Sie benötigen, um eine **FastAPI**-Anwendung (oder eine andere ASGI-Anwendung) auf einer entfernten Servermaschine auszuführen, ist ein ASGI-Serverprogramm wie **Uvicorn**, das standardmäßig im `fastapi`-Kommando enthalten ist.
 
 Es gibt mehrere Alternativen, einschließlich:
 
@@ -58,7 +58,7 @@ Es gibt mehrere Alternativen, einschließlich:
 * <a href="https://github.com/emmett-framework/granian" class="external-link" target="_blank">Granian</a>: Ein Rust HTTP-Server für Python-Anwendungen.
 * <a href="https://unit.nginx.org/howto/fastapi/" class="external-link" target="_blank">NGINX Unit</a>: NGINX Unit ist eine leichte und vielseitige Laufzeitumgebung für Webanwendungen.
 
-## Servermaschine und Serverprogramm
+## <a id="server-machine-and-server-program"></a> Servermaschine und Serverprogramm
 
 Es gibt ein kleines Detail bei den Namen, das Sie beachten sollten. 💡
 
@@ -66,9 +66,9 @@ Das Wort „**Server**“ wird häufig verwendet, um sowohl den entfernten/Cloud
 
 Denken Sie einfach daran, dass sich "Server" im Allgemeinen auf eines dieser beiden Dinge beziehen kann.
 
-Wenn man sich auf die entfernte Maschine bezieht, wird sie üblicherweise als **Server**, aber auch als **Maschine**, **VM** (virtuelle Maschine) oder **Knoten** bezeichnet. Diese Begriffe beziehen sich auf irgendeine Art von entfernten Rechner, normalerweise unter Linux, auf dem Sie Programme ausführen.
+Wenn man sich auf die entfernte Maschine bezieht, wird sie üblicherweise als **Server**, aber auch als **Maschine**, **VM** (virtuelle Maschine) oder **Knoten** bezeichnet. Diese Begriffe beziehen sich auf irgendeine Art von entferntem Rechner, normalerweise unter Linux, auf dem Sie Programme ausführen.
 
-## Das Serverprogramm installieren
+## <a id="install-the-server-program"></a> Das Serverprogramm installieren
 
 Wenn Sie FastAPI installieren, wird es mit einem Produktionsserver, Uvicorn, geliefert, und Sie können ihn mit dem `fastapi run` Befehl starten.
 
@@ -100,7 +100,7 @@ Wenn Sie FastAPI mit etwas wie `pip install "fastapi[standard]"` installieren, e
 
 ///
 
-## Das Serverprogramm ausführen
+## <a id="run-the-server-program"></a> Das Serverprogramm ausführen
 
 Wenn Sie einen ASGI-Server manuell installiert haben, müssen Sie normalerweise einen Importstring in einem speziellen Format übergeben, damit er Ihre FastAPI-Anwendung importiert:
 
@@ -141,7 +141,7 @@ Sie hilft während der **Entwicklung**, Sie sollten sie jedoch **nicht** in der 
 
 ///
 
-## Deployment-Konzepte
+## <a id="deployment-concepts"></a> Deployment-Konzepte
 
 Diese Beispiele führen das Serverprogramm (z.B. Uvicorn) aus, starten **einen einzelnen Prozess** und überwachen alle IPs (`0.0.0.0`) an einem vordefinierten Port (z. B. `80`).
 

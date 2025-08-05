@@ -1,8 +1,8 @@
-# Body – Mehrere Parameter
+# <a id="body-multiple-parameters"></a> Body – Mehrere Parameter
 
 Nun, da wir gesehen haben, wie `Path` und `Query` verwendet werden, schauen wir uns fortgeschrittenere Verwendungsmöglichkeiten von Requestbody-Deklarationen an.
 
-## `Path`-, `Query`- und Body-Parameter vermischen
+## <a id="mix-path-query-and-body-parameters"></a> `Path`-, `Query`- und Body-Parameter vermischen
 
 Zuerst einmal, Sie können `Path`-, `Query`- und Requestbody-Parameter-Deklarationen frei mischen und **FastAPI** wird wissen, was zu tun ist.
 
@@ -16,7 +16,7 @@ Beachten Sie, dass in diesem Fall das `item`, welches vom Body genommen wird, op
 
 ///
 
-## Mehrere Body-Parameter
+## <a id="multiple-body-parameters"></a> Mehrere Body-Parameter
 
 Im vorherigen Beispiel erwarteten die *Pfadoperationen* einen JSON-Body mit den Attributen eines `Item`s, etwa:
 
@@ -62,7 +62,7 @@ Beachten Sie, dass, obwohl `item` wie zuvor deklariert wurde, es nun unter einem
 
 Es wird die Validierung dieser zusammengesetzten Daten übernehmen, und diese im OpenAPI-Schema und der automatischen Dokumentation dokumentieren.
 
-## Einzelne Werte im Body
+## <a id="singular-values-in-body"></a> Einzelne Werte im Body
 
 So wie `Query` und `Path` für Query- und Pfad-Parameter, stellt **FastAPI** das Äquivalent `Body` zur Verfügung, um Extra-Daten für Body-Parameter zu definieren.
 
@@ -94,7 +94,7 @@ In diesem Fall erwartet **FastAPI** einen Body wie:
 
 Wiederum wird es die Datentypen konvertieren, validieren, dokumentieren, usw.
 
-## Mehrere Body-Parameter und Query-Parameter
+## <a id="multiple-body-params-and-query"></a> Mehrere Body-Parameter und Query-Parameter
 
 Natürlich können Sie auch, wann immer Sie das brauchen, weitere Query-Parameter hinzufügen, zusätzlich zu den Body-Parametern.
 
@@ -120,7 +120,7 @@ Zum Beispiel:
 
 ///
 
-## Einen einzelnen Body-Parameter einbetten
+## <a id="embed-a-single-body-parameter"></a> Einen einzelnen Body-Parameter einbetten
 
 Nehmen wir an, Sie haben nur einen einzelnen `item`-Body-Parameter von einem Pydantic-Modell `Item`.
 
@@ -160,7 +160,7 @@ statt:
 }
 ```
 
-## Zusammenfassung
+## <a id="recap"></a> Zusammenfassung
 
 Sie können mehrere Body-Parameter zu Ihrer *Pfadoperation-Funktion* hinzufügen, obwohl ein Request nur einen einzigen Body enthalten kann.
 
