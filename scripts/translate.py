@@ -1,5 +1,6 @@
 import secrets
 import subprocess
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Annotated, Iterable
@@ -142,6 +143,63 @@ def generate_en_path(*, lang: str, path: Path) -> Path:
     return out_path
 
 
+replace_with_dash_pattern = re.compile(r'[^a-z0-9]+')
+heading_pattern = re.compile(r'''
+    ^ ([#]+) [^\S\n]*               # level of the heading
+    (.+?)                           # text of the heading
+    (?:                             # optional stuff following a {% raw %} tag ...
+        [^\S\n]* [{]% [^\S\n]* raw [^\S\n]* %[}] .+?
+    )?                              # ... which we ignore, as we are regenerating it
+    [^\S\n]* $''',
+    re.MULTILINE | re.VERBOSE
+)
+def add_anchors(english_text: str, translation: str) -> str:
+    # get all headings and their levels in both documents
+    english_headings: list[tuple[str, str]] = heading_pattern.findall(english_text)
+    translation_headings: list[tuple[str, str]] = heading_pattern.findall(translation)
+
+    # test that we have the same amount ...
+    if len(english_headings) != len(translation_headings):
+        print(f'The translation has {
+            'less' if len(english_headings) > len(translation_headings) else 'more'
+        } headings than the English text.')
+        print(f'No heading anchors were added.')
+        return translation
+
+    # .... and the same levels of headings
+    ok = True
+    for counter, heading in enumerate(english_headings):
+        if translation_headings[counter][0] != heading[0]:
+            ok = False
+            print(f'heading {counter + 1}:')
+            print(f"Original    : '{heading[0]} {heading[1]}'")
+            print(f"Translation : '{translation_headings[counter][0]} {translation_headings[counter][1]}'")
+            print("Different levels!")
+            print()
+    if not ok:
+        print(f'No heading anchors were added.')
+        return translation
+
+    # Generate hashes for headings (not sure if this is exactly how hashes are created)
+    hashes: list[str] = [
+        replace_with_dash_pattern.sub('-', title.lower()).strip('-')
+        for _, title in english_headings
+    ]
+
+    # wrap the hashes in `{% raw %} ... {% endraw %}` and append them to the translation headings
+    counter = -1
+    def handler(match: re.Match[str]):
+        nonlocal counter
+        counter += 1
+        level, title = match.groups()
+        return f'{level} {title} {{% raw %}}{{#{hashes[counter]}}}{{% endraw %}}'
+
+    #~ english_text = heading_pattern.sub(handler, english_text)  # if desired
+    translation = heading_pattern.sub(handler, translation)
+
+    return translation
+
+
 @app.command()
 def translate_page(
     *,
@@ -199,11 +257,17 @@ def translate_page(
         ]
     )
     prompt = "\n\n".join(prompt_segments)
-    print(f"Running agent for {out_path}")
-    result = agent.run_sync(prompt)
-    out_content = f"{result.data.strip()}\n"
+
+    # For this example I have disabled generation and instead just use the previous translation.
+    #~ print(f"Running agent for {out_path}")
+    #~ result = agent.run_sync(prompt)
+    #~ out_content = f"{result.data.strip()}\n"
+    #~ out_content_with_anchors = add_anchors(original_content, out_content)
+    out_content = f"{(old_translation or 'no old translation!').strip()}\n"
+    out_content_with_anchors = add_anchors(original_content, out_content)
+
     print(f"Saving translation to {out_path}")
-    out_path.write_text(out_content, encoding='utf-8', newline='\n')
+    out_path.write_text(out_content_with_anchors, encoding='utf-8', newline='\n')
 
 
 def iter_all_en_paths() -> Iterable[Path]:
