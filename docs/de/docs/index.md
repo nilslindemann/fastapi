@@ -1,4 +1,4 @@
-# FastAPI
+# FastAPI { #fastapi }
 
 <style>
 .md-content .md-typeset h1 { display: none; }
@@ -48,7 +48,7 @@ Seine Schlüssel-Merkmale sind:
 
 <small>* Schätzung basierend auf Tests in einem internen Entwicklungsteam, das Produktionsanwendungen erstellt.</small>
 
-## Sponsoren
+## Sponsoren { #sponsors }
 
 <!-- sponsors -->
 
@@ -65,7 +65,7 @@ Seine Schlüssel-Merkmale sind:
 
 <a href="https://fastapi.tiangolo.com/fastapi-people/#sponsors" class="external-link" target="_blank">Andere Sponsoren</a>
 
-## Meinungen
+## Meinungen { #opinions }
 
 „_[...] Ich verwende **FastAPI** heutzutage sehr oft. [...] Ich habe tatsächlich vor, es für alle **ML-Dienste meines Teams bei Microsoft** zu verwenden. Einige davon werden in das Kernprodukt **Windows** und einige **Office**-Produkte integriert._“
 
@@ -111,7 +111,7 @@ Seine Schlüssel-Merkmale sind:
 
 ---
 
-## **Typer**, das FastAPI der CLIs
+## **Typer**, das FastAPI der CLIs { #typer-the-fastapi-of-clis }
 
 <a href="https://typer.tiangolo.com" target="_blank"><img src="https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg" style="width: 20%;"></a>
 
@@ -119,14 +119,14 @@ Wenn Sie eine <abbr title="Command Line Interface – Kommandozeilen-Schnittstel
 
 **Typer** ist die kleine Schwester von FastAPI. Und es soll das **FastAPI der CLIs** sein. ⌨️ 🚀
 
-## Anforderungen
+## Anforderungen { #requirements }
 
 FastAPI steht auf den Schultern von Giganten:
 
 * <a href="https://www.starlette.io/" class="external-link" target="_blank">Starlette</a> für die Webanteile.
 * <a href="https://docs.pydantic.dev/" class="external-link" target="_blank">Pydantic</a> für die Datenanteile.
 
-## Installation
+## Installation { #installation }
 
 Erstellen und aktivieren Sie eine <a href="https://fastapi.tiangolo.com/virtual-environments/" class="external-link" target="_blank">virtuelle Umgebung</a> und installieren Sie dann FastAPI:
 
@@ -142,9 +142,9 @@ $ pip install "fastapi[standard]"
 
 **Hinweis**: Stellen Sie sicher, dass Sie `"fastapi[standard]"` in Anführungszeichen setzen, damit es in allen Terminals funktioniert.
 
-## Beispiel
+## Beispiel { #example }
 
-### Erstellung
+### Erstellung { #create-it }
 
 Erstellen Sie eine Datei `main.py` mit dem folgenden Inhalt:
 
@@ -195,7 +195,7 @@ Wenn Sie das nicht kennen, schauen Sie sich den Abschnitt _„In Eile?“_ über
 
 </details>
 
-### Starten
+### Starten { #run-it }
 
 Starten Sie den Server mit:
 
@@ -237,7 +237,7 @@ Sie können mehr darüber in der <a href="https://fastapi.tiangolo.com/fastapi-c
 
 </details>
 
-### Überprüfen
+### Überprüfen { #check-it }
 
 Öffnen Sie Ihren Browser unter <a href="http://127.0.0.1:8000/items/5?q=somequery" class="external-link" target="_blank">http://127.0.0.1:8000/items/5?q=somequery</a>.
 
@@ -254,7 +254,7 @@ Sie haben bereits eine API erstellt, welche:
 * Der _Pfad_ `/items/{item_id}` hat einen _Pfadparameter_ `item_id`, der ein `int` sein sollte.
 * Der _Pfad_ `/items/{item_id}` hat einen optionalen `str` _Query Parameter_ `q`.
 
-### Interaktive API-Dokumentation
+### Interaktive API-Dokumentation { #interactive-api-docs }
 
 Gehen Sie nun auf <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
 
@@ -262,7 +262,7 @@ Sie sehen die automatische interaktive API-Dokumentation (bereitgestellt von <a 
 
 ![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)
 
-### Alternative API-Dokumentation
+### Alternative API-Dokumentation { #alternative-api-docs }
 
 Und jetzt gehen Sie auf <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
 
@@ -270,7 +270,7 @@ Sie sehen die alternative automatische Dokumentation (bereitgestellt von <a href
 
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)
 
-## Beispiel Aktualisierung
+## Beispiel Aktualisierung { #example-upgrade }
 
 Ändern Sie jetzt die Datei `main.py`, um den <abbr title="Body – Körper, Inhalt: Der eigentliche Inhalt einer Nachricht, nicht die Metadaten">Body</abbr> einer `PUT`-Anfrage zu empfangen.
 
@@ -308,7 +308,7 @@ def update_item(item_id: int, item: Item):
 
 Der `fastapi dev` Server sollte automatisch neu laden.
 
-### Aktualisierung der interaktiven API-Dokumentation
+### Aktualisierung der interaktiven API-Dokumentation { #interactive-api-docs-upgrade }
 
 Gehen Sie jetzt auf <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
 
@@ -324,7 +324,7 @@ Gehen Sie jetzt auf <a href="http://127.0.0.1:8000/docs" class="external-link" t
 
 ![Swagger UI Interaktion](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)
 
-### Aktualisierung der alternativen API-Dokumentation
+### Aktualisierung der alternativen API-Dokumentation { #alternative-api-docs-upgrade }
 
 Und nun gehen Sie auf <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
 
@@ -332,7 +332,7 @@ Und nun gehen Sie auf <a href="http://127.0.0.1:8000/redoc" class="external-link
 
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)
 
-### Zusammenfassung
+### Zusammenfassung { #recap }
 
 Zusammengefasst deklarieren Sie **einmal** die Typen von Parametern, Body, etc. als Funktionsparameter.
 
@@ -444,17 +444,17 @@ Für ein vollständigeres Beispiel, mit weiteren Funktionen, siehe das <a href="
     * **Cookie Sessions**
     * ... und mehr.
 
-## Performanz
+## Performanz { #performance }
 
 Unabhängige TechEmpower-Benchmarks zeigen **FastAPI**-Anwendungen, die unter Uvicorn laufen, als <a href="https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7" class="external-link" target="_blank">eines der schnellsten verfügbaren Python-Frameworks</a>, nur hinter Starlette und Uvicorn selbst (intern von FastAPI verwendet). (*)
 
 Um mehr darüber zu erfahren, siehe den Abschnitt <a href="https://fastapi.tiangolo.com/benchmarks/" class="internal-link" target="_blank">Benchmarks</a>.
 
-## Abhängigkeiten
+## Abhängigkeiten { #dependencies }
 
 FastAPI hängt von Pydantic und Starlette ab.
 
-### `standard` Abhängigkeiten
+### `standard` Abhängigkeiten { #standard-dependencies }
 
 Wenn Sie FastAPI mit `pip install "fastapi[standard]"` installieren, kommt es mit der `standard` Gruppe von optionalen Abhängigkeiten:
 
@@ -474,15 +474,15 @@ Wird von FastAPI verwendet:
 * `fastapi-cli[standard]` - um den `fastapi` Befehl bereitzustellen.
     * Dies beinhaltet `fastapi-cloud-cli`, das es Ihnen ermöglicht, Ihre FastAPI-Anwendung auf <a href="https://fastapicloud.com" class="external-link" target="_blank">FastAPI Cloud</a> bereitzustellen.
 
-### Ohne `standard` Abhängigkeiten
+### Ohne `standard` Abhängigkeiten { #without-standard-dependencies }
 
 Wenn Sie die `standard` optionalen Abhängigkeiten nicht einschließen möchten, können Sie mit `pip install fastapi` statt `pip install "fastapi[standard]"` installieren.
 
-### Ohne `fastapi-cloud-cli`
+### Ohne `fastapi-cloud-cli` { #without-fastapi-cloud-cli }
 
 Wenn Sie FastAPI mit den Standardabhängigkeiten, aber ohne das `fastapi-cloud-cli` installieren möchten, können Sie mit `pip install "fastapi[standard-no-fastapi-cloud-cli]"` installieren.
 
-### Zusätzliche optionale Abhängigkeiten
+### Zusätzliche optionale Abhängigkeiten { #additional-optional-dependencies }
 
 Es gibt einige zusätzliche Abhängigkeiten, die Sie installieren möchten.
 
@@ -496,6 +496,6 @@ Zusätzliche optionale FastAPI-Abhängigkeiten:
 * <a href="https://github.com/ijl/orjson" target="_blank"><code>orjson</code></a> - erforderlich, wenn Sie `ORJSONResponse` verwenden möchten.
 * <a href="https://github.com/esnme/ultrajson" target="_blank"><code>ujson</code></a> - erforderlich, wenn Sie `UJSONResponse` verwenden möchten.
 
-## Lizenz
+## Lizenz { #license }
 
 Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert.
