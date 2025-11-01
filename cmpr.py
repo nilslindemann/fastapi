@@ -478,6 +478,9 @@ def callback():
     pass
 
 
+# TBD: `Literal` is not supported in typer 0.16.0, which is the
+# version given in the requirements-docs.txt.
+# Shall we upgrade that requirement to 0.20.0?
 LANGS = Literal["es", "de", "ru", "pt"]
 
 
