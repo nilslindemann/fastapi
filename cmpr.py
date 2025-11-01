@@ -8,6 +8,7 @@ from typing import Annotated, Literal, cast
 
 import typer
 
+ROOT = Path('../')  # assuming this script is in the scripts directory
 DOCS_ROOT = os.getenv("DOCS_ROOT", "docs")
 TMP_DOCS_PATH = os.getenv("TMP_DOCS_PATH", "non-git/translations")
 VSCODE_COMMAND = os.getenv("VSCODE_COMMAND", "code.cmd" if platform.system() == "Windows" else "code")
@@ -357,7 +358,7 @@ def replace_html_links(source_text: str, target_text: str, lang: str) -> str:
 
 
 def get_lang_doc_root_dir(lang: str) -> Path:
-    return Path(DOCS_ROOT) / lang / "docs"
+    return ROOT / DOCS_ROOT / lang / "docs"
 
 
 def iter_all_en_paths() -> Iterable[Path]:
@@ -454,7 +455,7 @@ def process_one_file(en_doc_path_str: Path, lang_doc_path_str: Path, lang: str):
 
     if lang_doc_text_orig != lang_doc_text:
         print(f"❔🆚 {lang_doc_path_str} - non-empty diff")
-        tmp_path = Path(TMP_DOCS_PATH) / Path(lang_doc_path_str)
+        tmp_path = ROOT / TMP_DOCS_PATH / Path(lang_doc_path_str)
         tmp_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path.write_text(lang_doc_text, encoding="utf-8")
         subprocess.run([VSCODE_COMMAND, "--diff", str(lang_doc_path_str), str(tmp_path)])
