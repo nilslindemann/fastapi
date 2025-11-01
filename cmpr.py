@@ -281,8 +281,8 @@ def extract_html_links(lines: list[str]) -> list[tuple[tuple[str, list[tuple[str
             link_data = (link_str, [], link_text)
             link_open_tag = cast(re.Match, HTML_LINK_OPEN_TAG_RE.match(link_str)).group(1)
             attributes = re.findall(HTML_ATTR_RE, link_open_tag)
-            for attr_name, quotes, attr_value in attributes:
-                link_data[1].append((attr_name, quotes, attr_value))
+            for attr_data in attributes:
+                link_data[1].append(attr_data)
             links.append((link_data, line_no))
     return links
 
