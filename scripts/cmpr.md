@@ -23,7 +23,7 @@ When you need to check a lot of documents, it's hard to compare all of them manu
   * User should check the diff, fix mistakes if needed, and then continue (type `F`) or skip and mark this document as invalid.
 
 # Run:
-* It's supposed that the script is placed in the root of the project dirrectory.
+* It's supposed that the script is placed in the `scripts` subdirectory of the project directory.
 * You can run script for all documents of specified language with `python cmpr.py process-all --lang de` command
 * You can run script for specific pages of specified language with `python cmpr.py process-pages path/to/page1.md path/to/page2.md --lang de`
 
