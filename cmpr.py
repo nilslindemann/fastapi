@@ -4,7 +4,7 @@ import subprocess
 import platform
 from collections.abc import Iterable
 from pathlib import Path
-from typing import Annotated, Dict, List, Literal, Tuple
+from typing import Annotated, Literal, cast
 
 import typer
 
@@ -46,7 +46,7 @@ def get_code_block_lang(line: str) -> str:
     return ""
 
 
-def extract_multiline_blocks(text: str) -> List[Tuple[str, int, str]]:
+def extract_multiline_blocks(text: str) -> list[tuple[str, int, str]]:
     lines = text.splitlines()
     blocks = []
 
@@ -148,7 +148,7 @@ def replace_blocks(source_text: str, target_text: str) -> str:
 header_with_permalink_pattern = re.compile(r"^(#{1,6}) (.+?)(\s*\{\s*#.*\s*\})?\s*$")
 
 
-def extract_headers_and_permalinks(lines: list[str]) -> List[Tuple[str, int, str]]:
+def extract_headers_and_permalinks(lines: list[str]) -> list[tuple[str, int, str]]:
     headers = []
     in_code_block3 = False
     in_code_block4 = False
@@ -235,7 +235,7 @@ MARKDOWN_LINK_RE = re.compile(
 )
 
 
-def extract_markdown_links(lines: str) -> Dict[str, List[Tuple[str, int]]]:
+def extract_markdown_links(lines: list[str]) -> list[tuple[str, int]]:
     links = []
     for line_no, line in enumerate(lines, start=1):
         for m in MARKDOWN_LINK_RE.finditer(line):
@@ -272,14 +272,14 @@ HTML_LINK_OPEN_TAG_RE = re.compile(r"<a\b([^>]*)>")
 HTML_ATTR_RE = re.compile(r'(\w+)\s*=\s*([\'"])(.*?)\2')
 
 
-def extract_html_links(lines: str) -> Dict[str, List[Tuple[str, list[str], str]]]:
+def extract_html_links(lines: list[str]) -> list[tuple[tuple[str, list[tuple[str, str, str]], str], int]]:
     links = []
     for line_no, line in enumerate(lines, start=1):
         for html_link in HTML_LINK_RE.finditer(line):
             link_str = html_link.group(0)
-            link_text = HTML_LINK_TEXT.match(link_str).group(2)
+            link_text = cast(re.Match, HTML_LINK_TEXT.match(link_str)).group(2)
             link_data = (link_str, [], link_text)
-            link_open_tag = HTML_LINK_OPEN_TAG_RE.match(link_str).group(1)
+            link_open_tag = cast(re.Match, HTML_LINK_OPEN_TAG_RE.match(link_str)).group(1)
             attributes = re.findall(HTML_ATTR_RE, link_open_tag)
             for attr_name, quotes, attr_value in attributes:
                 link_data[1].append((attr_name, quotes, attr_value))
@@ -298,9 +298,9 @@ def add_lang_code_if_needed(url: str, prev_url: str, lang_code: str) -> str:
 
 
 def reconstruct_html_link(
-    attributes: List[Tuple[str, str, str]],
+    attributes: list[tuple[str, str, str]],
     link_text: str,
-    prev_attributes: List[Tuple[str, str, str]],
+    prev_attributes: list[tuple[str, str, str]],
     lang_code: str,
 ) -> str:
     prev_attributes_dict = {attr[0]: attr[2] for attr in prev_attributes}
@@ -332,6 +332,7 @@ def replace_html_links(source_text: str, target_text: str, lang: str) -> str:
     for (src_link_data, _), (tgt_link_data, tgt_line_no) in zip(
         source_links, target_links
     ):
+
         real_line_no = tgt_line_no - 1  # Convert to zero-based
         line = target_lines[real_line_no]
         tgt_link_text = tgt_link_data[2]
@@ -355,7 +356,7 @@ def replace_html_links(source_text: str, target_text: str, lang: str) -> str:
 # Helper functions
 
 
-def get_lang_doc_root_dir(lang: str) -> str:
+def get_lang_doc_root_dir(lang: str) -> Path:
     return Path(DOCS_ROOT) / lang / "docs"
 
 
@@ -415,7 +416,7 @@ def process_one_file_with_retry(document_path: str, lang: str):
             return
 
 
-def process_one_file(en_doc_path_str: str, lang_doc_path_str: str, lang: str):
+def process_one_file(en_doc_path_str: Path, lang_doc_path_str: Path, lang: str):
     en_doc_path = Path(en_doc_path_str)
     lang_doc_path = Path(lang_doc_path_str)
     if not en_doc_path.exists():
