@@ -1,6 +1,7 @@
 import os
 import re
 import subprocess
+import platform
 from collections.abc import Iterable
 from pathlib import Path
 from typing import Annotated, Dict, List, Literal, Tuple
@@ -9,6 +10,7 @@ import typer
 
 DOCS_ROOT = os.getenv("DOCS_ROOT", "docs")
 TMP_DOCS_PATH = os.getenv("TMP_DOCS_PATH", "non-git/translations")
+VSCODE_COMMAND = os.getenv("VSCODE_COMMAND", "code.cmd" if platform.system() == "Windows" else "code")
 
 
 non_translated_sections = (
@@ -435,7 +437,7 @@ def process_one_file(en_doc_path_str: str, lang_doc_path_str: str, lang: str):
 
     except CompareError as e:
         print(f"❔❌ {lang_doc_path_str} Error: {e}")
-        subprocess.run(["code", "--diff", lang_doc_path_str, en_doc_path_str])
+        subprocess.run([VSCODE_COMMAND, "--diff", lang_doc_path_str, en_doc_path_str])
         resp = ""
         while resp not in ("f", "e"):
             resp = input(
@@ -454,7 +456,7 @@ def process_one_file(en_doc_path_str: str, lang_doc_path_str: str, lang: str):
         tmp_path = Path(TMP_DOCS_PATH) / Path(lang_doc_path_str)
         tmp_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path.write_text(lang_doc_text, encoding="utf-8")
-        subprocess.run(["code", "--diff", str(lang_doc_path_str), str(tmp_path)])
+        subprocess.run([VSCODE_COMMAND, "--diff", str(lang_doc_path_str), str(tmp_path)])
         resp = ""
         while resp not in ("f", "e"):
             resp = input(
