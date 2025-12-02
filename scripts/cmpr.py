@@ -35,6 +35,40 @@ class CompareError(Exception):
 
 
 # ===================================================================================
+# Code includes
+
+CODE_INCLUDE_RE = re.compile(r"{\*\s*(.+?)\s*(?:ln\[(.+?)\]\s*)?(?:hl\[(.+?)\]\s*)?\*}")
+
+
+def extract_code_includes(lines: list[str]) -> list[tuple[str, str, str, int]]:
+    includes = []
+    for line_no, line in enumerate(lines, start=1):
+        if CODE_INCLUDE_RE.match(line):
+            includes.append((line_no, line))
+    return includes
+
+
+def replace_code_includes(source_text: str, target_text: str) -> str:
+    target_lines = target_text.splitlines()
+    source_code_includes = extract_code_includes(source_text.splitlines())
+    target_code_includes = extract_code_includes(target_lines)
+
+    if len(source_code_includes) != len(target_code_includes):
+        raise CompareError(
+            f"Number of code includes differs: "
+            f"{len(source_code_includes)} in source vs {len(target_code_includes)} in target."
+        )
+
+    for src_include, tgt_include in zip(source_code_includes, target_code_includes):
+        _, src_line = src_include
+        tgt_line_no, _ = tgt_include
+        target_lines[tgt_line_no - 1] = src_line
+
+    target_lines.append("")  # To preserve the empty line in the end of the file
+    return "\n".join(target_lines)
+
+
+# ===================================================================================
 # Multiline code blocks
 
 LANG_RE = re.compile(r"^```([\w-]*)", re.MULTILINE)
@@ -432,10 +466,11 @@ def process_one_file(en_doc_path_str: Path, lang_doc_path_str: Path, lang: str):
     lang_doc_text_orig = lang_doc_text
 
     try:
-        lang_doc_text = replace_blocks(en_doc_text, lang_doc_text)
-        lang_doc_text = replace_headers_and_permalinks(en_doc_text, lang_doc_text)
-        lang_doc_text = replace_markdown_links(en_doc_text, lang_doc_text, lang=lang)
-        lang_doc_text = replace_html_links(en_doc_text, lang_doc_text, lang=lang)
+        lang_doc_text = replace_code_includes(en_doc_text, lang_doc_text)
+        # lang_doc_text = replace_blocks(en_doc_text, lang_doc_text)
+        # lang_doc_text = replace_headers_and_permalinks(en_doc_text, lang_doc_text)
+        # lang_doc_text = replace_markdown_links(en_doc_text, lang_doc_text, lang=lang)
+        # lang_doc_text = replace_html_links(en_doc_text, lang_doc_text, lang=lang)
 
     except CompareError as e:
         print(f"❔❌ {lang_doc_path_str} Error: {e}")
