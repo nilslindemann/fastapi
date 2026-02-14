@@ -9,6 +9,205 @@ hide:
 
 ### Docs
 
+* 📝 Update docs for JWT to prevent timing attacks. PR [#14908](https://github.com/fastapi/fastapi/pull/14908) by [@tiangolo](https://github.com/tiangolo).
+
+### Translations
+
+* 🌐 Update translations for ja (update-all). PR [#14916](https://github.com/fastapi/fastapi/pull/14916) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for pt (update-all). PR [#14912](https://github.com/fastapi/fastapi/pull/14912) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for es (update-all and add-missing). PR [#14911](https://github.com/fastapi/fastapi/pull/14911) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for zh (update-all). PR [#14917](https://github.com/fastapi/fastapi/pull/14917) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for uk (update-all). PR [#14914](https://github.com/fastapi/fastapi/pull/14914) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for tr (update-all). PR [#14913](https://github.com/fastapi/fastapi/pull/14913) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for ru (update-outdated). PR [#14909](https://github.com/fastapi/fastapi/pull/14909) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+### Internal
+
+* ⬆ Bump cryptography from 46.0.4 to 46.0.5. PR [#14892](https://github.com/fastapi/fastapi/pull/14892) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pillow from 12.1.0 to 12.1.1. PR [#14899](https://github.com/fastapi/fastapi/pull/14899) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
+## 0.129.0
+
+### Breaking Changes
+
+* ➖ Drop support for Python 3.9. PR [#14897](https://github.com/fastapi/fastapi/pull/14897) by [@tiangolo](https://github.com/tiangolo).
+
+### Refactors
+
+* 🎨 Update internal types for Python 3.10. PR [#14898](https://github.com/fastapi/fastapi/pull/14898) by [@tiangolo](https://github.com/tiangolo).
+
+### Docs
+
+* 📝 Update highlights in webhooks docs. PR [#14905](https://github.com/fastapi/fastapi/pull/14905) by [@tiangolo](https://github.com/tiangolo).
+* 📝 Update source examples and docs from Python 3.9 to 3.10. PR [#14900](https://github.com/fastapi/fastapi/pull/14900) by [@tiangolo](https://github.com/tiangolo).
+
+### Internal
+
+* 🔨 Update docs.py scripts to migrate Python 3.9 to Python 3.10. PR [#14906](https://github.com/fastapi/fastapi/pull/14906) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.8
+
+### Docs
+
+* 📝 Fix grammar in `docs/en/docs/tutorial/first-steps.md`. PR [#14708](https://github.com/fastapi/fastapi/pull/14708) by [@SanjanaS10](https://github.com/SanjanaS10).
+
+### Internal
+
+* 🔨 Tweak PDM hook script. PR [#14895](https://github.com/fastapi/fastapi/pull/14895) by [@tiangolo](https://github.com/tiangolo).
+* ♻️ Update build setup for `fastapi-slim`, deprecate it, and make it only depend on `fastapi`. PR [#14894](https://github.com/fastapi/fastapi/pull/14894) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.7
+
+### Features
+
+* ✨ Show a clear error on attempt to include router into itself. PR [#14258](https://github.com/fastapi/fastapi/pull/14258) by [@JavierSanchezCastro](https://github.com/JavierSanchezCastro).
+* ✨ Replace `dict` by `Mapping` on `HTTPException.headers`. PR [#12997](https://github.com/fastapi/fastapi/pull/12997) by [@rijenkii](https://github.com/rijenkii).
+
+### Refactors
+
+* ♻️ Simplify reading files in memory, do it sequentially instead of (fake) parallel. PR [#14884](https://github.com/fastapi/fastapi/pull/14884) by [@tiangolo](https://github.com/tiangolo).
+
+### Docs
+
+* 📝 Use `dfn` tag for definitions instead of `abbr` in docs. PR [#14744](https://github.com/fastapi/fastapi/pull/14744) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+### Internal
+
+* ✅ Tweak comment in test to reference PR. PR [#14885](https://github.com/fastapi/fastapi/pull/14885) by [@tiangolo](https://github.com/tiangolo).
+* 🔧 Update LLM-prompt for `abbr` and `dfn` tags. PR [#14747](https://github.com/fastapi/fastapi/pull/14747) by [@YuriiMotov](https://github.com/YuriiMotov).
+* ✅ Test order for the submitted byte Files. PR [#14828](https://github.com/fastapi/fastapi/pull/14828) by [@valentinDruzhinin](https://github.com/valentinDruzhinin).
+* 🔧 Configure `test` workflow to run tests with `inline-snapshot=review`. PR [#14876](https://github.com/fastapi/fastapi/pull/14876) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+## 0.128.6
+
+### Fixes
+
+* 🐛 Fix `on_startup` and `on_shutdown` parameters of `APIRouter`. PR [#14873](https://github.com/fastapi/fastapi/pull/14873) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+### Translations
+
+* 🌐 Update translations for zh (update-outdated). PR [#14843](https://github.com/fastapi/fastapi/pull/14843) by [@tiangolo](https://github.com/tiangolo).
+
+### Internal
+
+* ✅ Fix parameterized tests with snapshots. PR [#14875](https://github.com/fastapi/fastapi/pull/14875) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+## 0.128.5
+
+### Refactors
+
+* ♻️ Refactor and simplify Pydantic v2 (and v1) compatibility internal utils. PR [#14862](https://github.com/fastapi/fastapi/pull/14862) by [@tiangolo](https://github.com/tiangolo).
+
+### Internal
+
+* ✅ Add inline snapshot tests for OpenAPI before changes from Pydantic v2. PR [#14864](https://github.com/fastapi/fastapi/pull/14864) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.4
+
+### Refactors
+
+* ♻️ Refactor internals, simplify Pydantic v2/v1 utils, `create_model_field`, better types for `lenient_issubclass`. PR [#14860](https://github.com/fastapi/fastapi/pull/14860) by [@tiangolo](https://github.com/tiangolo).
+* ♻️ Simplify internals, remove Pydantic v1 only logic, no longer needed. PR [#14857](https://github.com/fastapi/fastapi/pull/14857) by [@tiangolo](https://github.com/tiangolo).
+* ♻️ Refactor internals, cleanup unneeded Pydantic v1 specific logic. PR [#14856](https://github.com/fastapi/fastapi/pull/14856) by [@tiangolo](https://github.com/tiangolo).
+
+### Translations
+
+* 🌐 Update translations for fr (outdated pages). PR [#14839](https://github.com/fastapi/fastapi/pull/14839) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for tr (outdated and missing). PR [#14838](https://github.com/fastapi/fastapi/pull/14838) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+### Internal
+
+* ⬆️ Upgrade development dependencies. PR [#14854](https://github.com/fastapi/fastapi/pull/14854) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.3
+
+### Refactors
+
+* ♻️ Re-implement `on_event` in FastAPI for compatibility with the next Starlette, while keeping backwards compatibility. PR [#14851](https://github.com/fastapi/fastapi/pull/14851) by [@tiangolo](https://github.com/tiangolo).
+
+### Upgrades
+
+* ⬆️ Upgrade Starlette supported version range to `starlette>=0.40.0,<1.0.0`. PR [#14853](https://github.com/fastapi/fastapi/pull/14853) by [@tiangolo](https://github.com/tiangolo).
+
+### Translations
+
+* 🌐 Update translations for ru (update-outdated). PR [#14834](https://github.com/fastapi/fastapi/pull/14834) by [@tiangolo](https://github.com/tiangolo).
+
+### Internal
+
+* 👷 Run tests with Starlette from git. PR [#14849](https://github.com/fastapi/fastapi/pull/14849) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Run tests with lower bound uv sync, upgrade `fastapi[all]` minimum dependencies: `ujson >=5.8.0`, `orjson >=3.9.3`. PR [#14846](https://github.com/fastapi/fastapi/pull/14846) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.2
+
+### Features
+
+* ✨ Add support for PEP695 `TypeAliasType`. PR [#13920](https://github.com/fastapi/fastapi/pull/13920) by [@cstruct](https://github.com/cstruct).
+* ✨ Allow `Response` type hint as dependency annotation. PR [#14794](https://github.com/fastapi/fastapi/pull/14794) by [@jonathan-fulton](https://github.com/jonathan-fulton).
+
+### Fixes
+
+* 🐛 Fix using `Json[list[str]]` type (issue #10997). PR [#14616](https://github.com/fastapi/fastapi/pull/14616) by [@mkanetsuna](https://github.com/mkanetsuna).
+
+### Docs
+
+* 📝 Update docs for translations. PR [#14830](https://github.com/fastapi/fastapi/pull/14830) by [@tiangolo](https://github.com/tiangolo).
+* 📝 Fix duplicate word in `advanced-dependencies.md`. PR [#14815](https://github.com/fastapi/fastapi/pull/14815) by [@Rayyan-Oumlil](https://github.com/Rayyan-Oumlil).
+
+### Translations
+
+* 🌐 Enable Traditional Chinese translations. PR [#14842](https://github.com/fastapi/fastapi/pull/14842) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Enable French docs translations. PR [#14841](https://github.com/fastapi/fastapi/pull/14841) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for fr (translate-page). PR [#14837](https://github.com/fastapi/fastapi/pull/14837) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for de (update-outdated). PR [#14836](https://github.com/fastapi/fastapi/pull/14836) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for pt (update-outdated). PR [#14833](https://github.com/fastapi/fastapi/pull/14833) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for ko (update-outdated). PR [#14835](https://github.com/fastapi/fastapi/pull/14835) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for es (update-outdated). PR [#14832](https://github.com/fastapi/fastapi/pull/14832) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for tr (update-outdated). PR [#14831](https://github.com/fastapi/fastapi/pull/14831) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for tr (add-missing). PR [#14790](https://github.com/fastapi/fastapi/pull/14790) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for fr (update-outdated). PR [#14826](https://github.com/fastapi/fastapi/pull/14826) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for zh-hant (update-outdated). PR [#14825](https://github.com/fastapi/fastapi/pull/14825) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for uk (update-outdated). PR [#14822](https://github.com/fastapi/fastapi/pull/14822) by [@tiangolo](https://github.com/tiangolo).
+* 🔨 Update docs and translations scripts, enable Turkish. PR [#14824](https://github.com/fastapi/fastapi/pull/14824) by [@tiangolo](https://github.com/tiangolo).
+
+### Internal
+
+* 🔨 Add max pages to translate to configs. PR [#14840](https://github.com/fastapi/fastapi/pull/14840) by [@tiangolo](https://github.com/tiangolo).
+
+## 0.128.1
+
+### Features
+
+* ✨ Add `viewport` meta tag to improve Swagger UI on mobile devices. PR [#14777](https://github.com/fastapi/fastapi/pull/14777) by [@Joab0](https://github.com/Joab0).
+* 🚸 Improve error message for invalid query parameter type annotations. PR [#14479](https://github.com/fastapi/fastapi/pull/14479) by [@retwish](https://github.com/retwish).
+
+### Fixes
+
+* 🐛 Update `ValidationError` schema to include `input` and `ctx`. PR [#14791](https://github.com/fastapi/fastapi/pull/14791) by [@jonathan-fulton](https://github.com/jonathan-fulton).
+* 🐛 Fix TYPE_CHECKING annotations for Python 3.14 (PEP 649). PR [#14789](https://github.com/fastapi/fastapi/pull/14789) by [@mgu](https://github.com/mgu).
+* 🐛 Strip whitespaces from `Authorization` header credentials. PR [#14786](https://github.com/fastapi/fastapi/pull/14786) by [@WaveTheory1](https://github.com/WaveTheory1).
+* 🐛 Fix OpenAPI duplication of `anyOf` refs for app-level responses with specified `content` and `model` as `Union`. PR [#14463](https://github.com/fastapi/fastapi/pull/14463) by [@DJMcoder](https://github.com/DJMcoder).
+
+### Refactors
+
+* 🎨 Tweak types for mypy. PR [#14816](https://github.com/fastapi/fastapi/pull/14816) by [@tiangolo](https://github.com/tiangolo).
+* 🏷️ Re-export `IncEx` type from Pydantic instead of duplicating it. PR [#14641](https://github.com/fastapi/fastapi/pull/14641) by [@mvanderlee](https://github.com/mvanderlee).
+* 💡 Update comment for Pydantic internals. PR [#14814](https://github.com/fastapi/fastapi/pull/14814) by [@tiangolo](https://github.com/tiangolo).
+
+### Docs
+
+* 📝 Update docs for contributing translations, simplify title. PR [#14817](https://github.com/fastapi/fastapi/pull/14817) by [@tiangolo](https://github.com/tiangolo).
+* 📝 Fix typing issue in `docs_src/app_testing/app_b` code example. PR [#14573](https://github.com/fastapi/fastapi/pull/14573) by [@timakaa](https://github.com/timakaa).
+* 📝 Fix example of license identifier in documentation. PR [#14492](https://github.com/fastapi/fastapi/pull/14492) by [@johnson-earls](https://github.com/johnson-earls).
+* 📝 Add banner to translated pages. PR [#14809](https://github.com/fastapi/fastapi/pull/14809) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Add links to related sections of docs to docstrings. PR [#14776](https://github.com/fastapi/fastapi/pull/14776) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Update embedded code examples to Python 3.10 syntax. PR [#14758](https://github.com/fastapi/fastapi/pull/14758) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Fix dependency installation command in `docs/en/docs/contributing.md`. PR [#14757](https://github.com/fastapi/fastapi/pull/14757) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Use return type annotation instead of `response_model` when possible. PR [#14753](https://github.com/fastapi/fastapi/pull/14753) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Use `WSGIMiddleware` from `a2wsgi` instead of deprecated `fastapi.middleware.wsgi.WSGIMiddleware`. PR [#14756](https://github.com/fastapi/fastapi/pull/14756) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 📝 Fix minor typos in release notes. PR [#14780](https://github.com/fastapi/fastapi/pull/14780) by [@whyvineet](https://github.com/whyvineet).
+* 🐛 Fix copy button in custom.js. PR [#14722](https://github.com/fastapi/fastapi/pull/14722) by [@fcharrier](https://github.com/fcharrier).
+* 📝 Add contribution instructions about LLM generated code and comments and automated tools for PRs. PR [#14706](https://github.com/fastapi/fastapi/pull/14706) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Update docs for management tasks. PR [#14705](https://github.com/fastapi/fastapi/pull/14705) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Update docs about managing translations. PR [#14704](https://github.com/fastapi/fastapi/pull/14704) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Update docs for contributing with translations. PR [#14701](https://github.com/fastapi/fastapi/pull/14701) by [@tiangolo](https://github.com/tiangolo).
@@ -16,6 +215,21 @@ hide:
 
 ### Translations
 
+* 🌐 Improve LLM prompt of `uk` documentation. PR [#14795](https://github.com/fastapi/fastapi/pull/14795) by [@roli2py](https://github.com/roli2py).
+* 🌐 Update translations for ja (update-outdated). PR [#14588](https://github.com/fastapi/fastapi/pull/14588) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for uk (update outdated, found by fixer tool). PR [#14739](https://github.com/fastapi/fastapi/pull/14739) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for tr (update-outdated). PR [#14745](https://github.com/fastapi/fastapi/pull/14745) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update `llm-prompt.md` for Korean language. PR [#14763](https://github.com/fastapi/fastapi/pull/14763) by [@seuthootDev](https://github.com/seuthootDev).
+* 🌐 Update translations for ko (update outdated, found by fixer tool). PR [#14738](https://github.com/fastapi/fastapi/pull/14738) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for de (update-outdated). PR [#14690](https://github.com/fastapi/fastapi/pull/14690) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update LLM prompt for Russian translations. PR [#14733](https://github.com/fastapi/fastapi/pull/14733) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🌐 Update translations for ru (update-outdated). PR [#14693](https://github.com/fastapi/fastapi/pull/14693) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for pt (update-outdated). PR [#14724](https://github.com/fastapi/fastapi/pull/14724) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update Korean LLM prompt. PR [#14740](https://github.com/fastapi/fastapi/pull/14740) by [@hard-coders](https://github.com/hard-coders).
+* 🌐 Improve LLM prompt for Turkish translations. PR [#14728](https://github.com/fastapi/fastapi/pull/14728) by [@Kadermiyanyedi](https://github.com/Kadermiyanyedi).
+* 🌐 Update portuguese llm-prompt.md. PR [#14702](https://github.com/fastapi/fastapi/pull/14702) by [@ceb10n](https://github.com/ceb10n).
+* 🌐 Update LLM prompt instructions file for French. PR [#14618](https://github.com/fastapi/fastapi/pull/14618) by [@tiangolo](https://github.com/tiangolo).
+* 🌐 Update translations for ko (add-missing). PR [#14699](https://github.com/fastapi/fastapi/pull/14699) by [@tiangolo](https://github.com/tiangolo).
 * 🌐 Update translations for ko (update-outdated). PR [#14589](https://github.com/fastapi/fastapi/pull/14589) by [@tiangolo](https://github.com/tiangolo).
 * 🌐 Update translations for uk (update-outdated). PR [#14587](https://github.com/fastapi/fastapi/pull/14587) by [@tiangolo](https://github.com/tiangolo).
 * 🌐 Update translations for es (update-outdated). PR [#14686](https://github.com/fastapi/fastapi/pull/14686) by [@tiangolo](https://github.com/tiangolo).
@@ -25,6 +239,22 @@ hide:
 
 ### Internal
 
+* ⬇️ Downgrade LLM translations model to GPT-5 to reduce mistakes. PR [#14823](https://github.com/fastapi/fastapi/pull/14823) by [@tiangolo](https://github.com/tiangolo).
+* 🐛 Fix translation script commit in place. PR [#14818](https://github.com/fastapi/fastapi/pull/14818) by [@tiangolo](https://github.com/tiangolo).
+* 🔨 Update translation script to retry if LLM-response doesn't pass validation with Translation Fixer tool. PR [#14749](https://github.com/fastapi/fastapi/pull/14749) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 👷 Run tests only on relevant code changes (not on docs). PR [#14813](https://github.com/fastapi/fastapi/pull/14813) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Run mypy by pre-commit. PR [#14806](https://github.com/fastapi/fastapi/pull/14806) by [@YuriiMotov](https://github.com/YuriiMotov).
+* ⬆ Bump ruff from 0.14.3 to 0.14.14. PR [#14798](https://github.com/fastapi/fastapi/pull/14798) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pyasn1 from 0.6.1 to 0.6.2. PR [#14804](https://github.com/fastapi/fastapi/pull/14804) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump sqlmodel from 0.0.27 to 0.0.31. PR [#14802](https://github.com/fastapi/fastapi/pull/14802) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump mkdocs-macros-plugin from 1.4.1 to 1.5.0. PR [#14801](https://github.com/fastapi/fastapi/pull/14801) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump gitpython from 3.1.45 to 3.1.46. PR [#14800](https://github.com/fastapi/fastapi/pull/14800) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump typer from 0.16.0 to 0.21.1. PR [#14799](https://github.com/fastapi/fastapi/pull/14799) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* 👥 Update FastAPI GitHub topic repositories. PR [#14803](https://github.com/fastapi/fastapi/pull/14803) by [@tiangolo](https://github.com/tiangolo).
+* 👥 Update FastAPI People - Contributors and Translators. PR [#14796](https://github.com/fastapi/fastapi/pull/14796) by [@tiangolo](https://github.com/tiangolo).
+* 🔧 Ensure that an edit to `uv.lock` gets the `internal` label. PR [#14759](https://github.com/fastapi/fastapi/pull/14759) by [@svlandeg](https://github.com/svlandeg).
+* 🔧 Update sponsors: remove Requestly. PR [#14735](https://github.com/fastapi/fastapi/pull/14735) by [@tiangolo](https://github.com/tiangolo).
+* 🔧 Update sponsors, LambdaTest changes to TestMu AI. PR [#14734](https://github.com/fastapi/fastapi/pull/14734) by [@tiangolo](https://github.com/tiangolo).
 * ⬆ Bump actions/cache from 4 to 5. PR [#14511](https://github.com/fastapi/fastapi/pull/14511) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/upload-artifact from 5 to 6. PR [#14525](https://github.com/fastapi/fastapi/pull/14525) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/download-artifact from 6 to 7. PR [#14526](https://github.com/fastapi/fastapi/pull/14526) by [@dependabot[bot]](https://github.com/apps/dependabot).
@@ -267,7 +497,7 @@ hide:
 
 ### Refactors
 
-* 🔥 Remove dangling extra condiitonal no longer needed. PR [#14435](https://github.com/fastapi/fastapi/pull/14435) by [@tiangolo](https://github.com/tiangolo).
+* 🔥 Remove dangling extra conditional no longer needed. PR [#14435](https://github.com/fastapi/fastapi/pull/14435) by [@tiangolo](https://github.com/tiangolo).
 * ♻️ Refactor internals, update `is_coroutine` check to reuse internal supported variants (unwrap, check class). PR [#14434](https://github.com/fastapi/fastapi/pull/14434) by [@tiangolo](https://github.com/tiangolo).
 
 ### Translations
@@ -402,7 +632,7 @@ hide:
 
 ### Docs
 
-* 📝 Upate docs for advanced dependencies with `yield`, noting the changes in 0.121.0, adding `scope`. PR [#14287](https://github.com/fastapi/fastapi/pull/14287) by [@tiangolo](https://github.com/tiangolo).
+* 📝 Update docs for advanced dependencies with `yield`, noting the changes in 0.121.0, adding `scope`. PR [#14287](https://github.com/fastapi/fastapi/pull/14287) by [@tiangolo](https://github.com/tiangolo).
 
 ### Internal
 
@@ -2630,7 +2860,7 @@ Read more in the [advisory: Content-Type Header ReDoS](https://github.com/tiango
 * 🌐 Add Japanese translation for `docs/ja/docs/tutorial/handling-errors.md`. PR [#1953](https://github.com/tiangolo/fastapi/pull/1953) by [@SwftAlpc](https://github.com/SwftAlpc).
 * 🌐 Add Japanese translation for `docs/ja/docs/tutorial/response-status-code.md`. PR [#1942](https://github.com/tiangolo/fastapi/pull/1942) by [@SwftAlpc](https://github.com/SwftAlpc).
 * 🌐 Add Japanese translation for `docs/ja/docs/tutorial/extra-models.md`. PR [#1941](https://github.com/tiangolo/fastapi/pull/1941) by [@SwftAlpc](https://github.com/SwftAlpc).
-* 🌐 Add Japanese tranlsation for `docs/ja/docs/tutorial/schema-extra-example.md`. PR [#1931](https://github.com/tiangolo/fastapi/pull/1931) by [@SwftAlpc](https://github.com/SwftAlpc).
+* 🌐 Add Japanese translation for `docs/ja/docs/tutorial/schema-extra-example.md`. PR [#1931](https://github.com/tiangolo/fastapi/pull/1931) by [@SwftAlpc](https://github.com/SwftAlpc).
 * 🌐 Add Japanese translation for `docs/ja/docs/tutorial/body-nested-models.md`. PR [#1930](https://github.com/tiangolo/fastapi/pull/1930) by [@SwftAlpc](https://github.com/SwftAlpc).
 * 🌐 Add Japanese translation for `docs/ja/docs/tutorial/body-fields.md`. PR [#1923](https://github.com/tiangolo/fastapi/pull/1923) by [@SwftAlpc](https://github.com/SwftAlpc).
 * 🌐 Add German translation for `docs/de/docs/tutorial/index.md`. PR [#9502](https://github.com/tiangolo/fastapi/pull/9502) by [@fhabers21](https://github.com/fhabers21).
@@ -4006,7 +4236,7 @@ You hopefully updated to a supported version of Python a while ago. If you haven
 ### Fixes
 
 * 🐛 Fix `RuntimeError` raised when `HTTPException` has a status code with no content. PR [#5365](https://github.com/tiangolo/fastapi/pull/5365) by [@iudeen](https://github.com/iudeen).
-* 🐛 Fix empty reponse body when default `status_code` is empty but the a `Response` parameter with `response.status_code` is set. PR [#5360](https://github.com/tiangolo/fastapi/pull/5360) by [@tmeckel](https://github.com/tmeckel).
+* 🐛 Fix empty response body when default `status_code` is empty but the a `Response` parameter with `response.status_code` is set. PR [#5360](https://github.com/tiangolo/fastapi/pull/5360) by [@tmeckel](https://github.com/tmeckel).
 
 ### Docs
 

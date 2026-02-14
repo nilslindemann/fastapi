@@ -13,7 +13,7 @@ Create a virtual environment and install the required packages with <a href="htt
 <div class="termy">
 
 ```console
-$ uv sync
+$ uv sync --extra all
 
 ---> 100%
 ```
@@ -32,9 +32,9 @@ That way, you don't have to "install" your local version to be able to test ever
 
 /// note | Technical Details
 
-This only happens when you install using `uv sync` instead of running `pip install fastapi` directly.
+This only happens when you install using `uv sync --extra all` instead of running `pip install fastapi` directly.
 
-That is because `uv sync` will install the local version of FastAPI in "editable" mode by default.
+That is because `uv sync --extra all` will install the local version of FastAPI in "editable" mode by default.
 
 ///
 
@@ -179,19 +179,23 @@ as Uvicorn by default will use the port `8000`, the documentation on port `8008`
 
 Help with translations is VERY MUCH appreciated! And it can't be done without the help from the community. 🌎 🚀
 
-Here are the steps to help with translations.
-
-#### Review Translation PRs
-
 Translation pull requests are made by LLMs guided with prompts designed by the FastAPI team together with the community of native speakers for each supported language.
 
-These translations are normally still reviewed by native speakers, and here's where you can help!
+#### LLM Prompt per Language
 
-* Check the currently <a href="https://github.com/fastapi/fastapi/pulls" class="external-link" target="_blank">existing pull requests</a> for your language. You can filter the pull requests by the ones with the label for your language. For example, for Spanish, the label is <a href="https://github.com/fastapi/fastapi/pulls?q=is%3Aopen+sort%3Aupdated-desc+label%3Alang-es+label%3Aawaiting-review" class="external-link" target="_blank">`lang-es`</a>.
+Each language has a directory: <a href="https://github.com/fastapi/fastapi/tree/master/docs" class="external-link" target="_blank">https://github.com/fastapi/fastapi/tree/master/docs</a>, in it you can see a file `llm-prompt.md` with the prompt specific for that language.
 
-* When reviewing a pull request, it's better not to suggest changes in the same pull request, because it is LLM generated, and it won't be possible to make sure that small individual changes are replicated in other similar sections, or that they are preserved when translating the same content again.
+For example, for Spanish, the prompt is at: <a href="https://github.com/fastapi/fastapi/blob/master/docs/es/llm-prompt.md" class="external-link" target="_blank">`docs/es/llm-prompt.md`</a>.
 
-* Instead of adding suggestions to the translation PR, make the suggestions to the LLM prompt file for that language, in a new PR. For example, for Spanish, the LLM prompt file is at: <a href="https://github.com/fastapi/fastapi/blob/master/docs/es/llm-prompt.md" class="external-link" target="_blank">`docs/es/llm-prompt.md`</a>.
+If you see mistakes in your language, you can make suggestions to the prompt in that file for your language, and request the specific pages you would like to re-generate after the changes.
+
+#### Reviewing Translation PRs
+
+You can also check the currently <a href="https://github.com/fastapi/fastapi/pulls" class="external-link" target="_blank">existing pull requests</a> for your language. You can filter the pull requests by the ones with the label for your language. For example, for Spanish, the label is <a href="https://github.com/fastapi/fastapi/pulls?q=is%3Aopen+sort%3Aupdated-desc+label%3Alang-es+label%3Aawaiting-review" class="external-link" target="_blank">`lang-es`</a>.
+
+When reviewing a pull request, it's better not to suggest changes in the same pull request, because it is LLM generated, and it won't be possible to make sure that small individual changes are replicated in other similar sections, or that they are preserved when translating the same content again.
+
+Instead of adding suggestions to the translation PR, make the suggestions to the LLM prompt file for that language, in a new PR. For example, for Spanish, the LLM prompt file is at: <a href="https://github.com/fastapi/fastapi/blob/master/docs/es/llm-prompt.md" class="external-link" target="_blank">`docs/es/llm-prompt.md`</a>.
 
 /// tip
 
@@ -201,9 +205,9 @@ Check the docs about <a href="https://help.github.com/en/github/collaborating-wi
 
 #### Subscribe to Notifications for Your Language
 
-* Check if there's a <a href="https://github.com/fastapi/fastapi/discussions/categories/translations" class="external-link" target="_blank">GitHub Discussion</a> to coordinate translations for your language. You can subscribe to it, and when there's a new pull request to review, an automatic comment will be added to the discussion.
+Check if there's a <a href="https://github.com/fastapi/fastapi/discussions/categories/translations" class="external-link" target="_blank">GitHub Discussion</a> to coordinate translations for your language. You can subscribe to it, and when there's a new pull request to review, an automatic comment will be added to the discussion.
 
-* To check the 2-letter code for the language you want to translate, you can use the table <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" class="external-link" target="_blank">List of ISO 639-1 codes</a>.
+To check the 2-letter code for the language you want to translate, you can use the table <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" class="external-link" target="_blank">List of ISO 639-1 codes</a>.
 
 #### Request a New Language
 
@@ -219,3 +223,39 @@ Once there are several people in the discussion, the FastAPI team can evaluate i
 Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
 
 Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.
+
+## Automated Code and AI
+
+You are encouraged to use all the tools you want to do your work and contribute as efficiently as possible, this includes AI (LLM) tools, etc. Nevertheless, contributions should have meaningful human intervention, judgement, context, etc.
+
+If the **human effort** put in a PR, e.g. writing LLM prompts, is **less** than the **effort we would need to put** to **review it**, please **don't** submit the PR.
+
+Think of it this way: we can already write LLM prompts or run automated tools ourselves, and that would be faster than reviewing external PRs.
+
+### Closing Automated and AI PRs
+
+If we see PRs that seem AI generated or automated in similar ways, we'll flag them and close them.
+
+The same applies to comments and descriptions, please don't copy paste the content generated by an LLM.
+
+### Human Effort Denial of Service
+
+Using automated tools and AI to submit PRs or comments that we have to carefully review and handle would be the equivalent of a <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack" class="external-link" target="_blank">Denial-of-service attack</a> on our human effort.
+
+It would be very little effort from the person submitting the PR (an LLM prompt) that generates a large amount of effort on our side (carefully reviewing code).
+
+Please don't do that.
+
+We'll need to block accounts that spam us with repeated automated PRs or comments.
+
+### Use Tools Wisely
+
+As Uncle Ben said:
+
+<blockquote>
+With great <strike>power</strike> <strong>tools</strong> comes great responsibility.
+</blockquote>
+
+Avoid inadvertently doing harm.
+
+You have amazing tools at hand, use them wisely to help effectively.
